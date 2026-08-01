@@ -190,6 +190,30 @@
       .btn:active {
         transform: translateY(-1px) scale(0.99);
       }
+      .btn.plan-trip::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          115deg,
+          transparent 40%,
+          rgba(255, 255, 255, 0.45) 50%,
+          transparent 60%
+        );
+        transform: translateX(-140%);
+        pointer-events: none;
+      }
+      .btn.plan-trip:hover::before {
+        transform: translateX(140%);
+        transition: transform 0.85s var(--ease);
+      }
+      .btn.plan-trip:hover .ar {
+        transform: translateX(3px) rotate(-45deg) scale(1.08);
+      }
+      .btn.plan-trip:active {
+        transform: translateY(0) scale(0.96);
+        box-shadow: 0 8px 18px -12px rgba(210, 89, 63, 0.75);
+      }
       .btn-ghost {
         background: transparent;
         color: var(--coral);
@@ -311,19 +335,37 @@
       body.hero-top .site-header:not(.scrolled) .brand .tag,
       body.hero-top .site-header:not(.scrolled) .nav > a,
       body.hero-top .site-header:not(.scrolled) .nav > .nav-item > .nav-parent,
-      body.hero-top .site-header:not(.scrolled) .nav > .nav-item > .nav-parent .nav-caret {
+      body.hero-top
+        .site-header:not(.scrolled)
+        .nav
+        > .nav-item
+        > .nav-parent
+        .nav-caret {
         color: #fffaf2;
       }
       body.hero-top .site-header:not(.scrolled) .brand .tag {
         color: rgba(255, 250, 242, 0.72);
       }
       body.hero-top .site-header:not(.scrolled) .nav > a::after,
-      body.hero-top .site-header:not(.scrolled) .nav > .nav-item > .nav-parent .nav-label::after {
+      body.hero-top
+        .site-header:not(.scrolled)
+        .nav
+        > .nav-item
+        > .nav-parent
+        .nav-label::after {
         background: #fffaf2;
       }
       body.hero-top .site-header:not(.scrolled) .nav > a:hover,
-      body.hero-top .site-header:not(.scrolled) .nav > .nav-item > .nav-parent:hover,
-      body.hero-top .site-header:not(.scrolled) .nav > .nav-item > .nav-parent.active {
+      body.hero-top
+        .site-header:not(.scrolled)
+        .nav
+        > .nav-item
+        > .nav-parent:hover,
+      body.hero-top
+        .site-header:not(.scrolled)
+        .nav
+        > .nav-item
+        > .nav-parent.active {
         color: #ffd7c4;
       }
       /* The dropdown panel is always a solid white card regardless of
@@ -341,7 +383,10 @@
         border: 1px solid rgba(255, 250, 242, 0.5);
         box-shadow: none;
       }
-      body.hero-top .site-header:not(.scrolled) .header-cta .btn.plan-trip:hover {
+      body.hero-top
+        .site-header:not(.scrolled)
+        .header-cta
+        .btn.plan-trip:hover {
         background: #fffaf2;
         color: var(--coral-d);
       }
@@ -586,9 +631,23 @@
       }
       .hero::before {
         background:
-          linear-gradient(90deg, rgba(35, 22, 14, 0.78) 0%, rgba(57, 34, 20, 0.56) 35%, rgba(57, 34, 20, 0.16) 66%, rgba(57, 34, 20, 0.28) 100%),
-          radial-gradient(60% 78% at 18% 48%, rgba(248, 221, 190, 0.24), transparent 64%),
-          linear-gradient(180deg, rgba(25, 16, 10, 0.08), rgba(25, 16, 10, 0.38));
+          linear-gradient(
+            90deg,
+            rgba(35, 22, 14, 0.78) 0%,
+            rgba(57, 34, 20, 0.56) 35%,
+            rgba(57, 34, 20, 0.16) 66%,
+            rgba(57, 34, 20, 0.28) 100%
+          ),
+          radial-gradient(
+            60% 78% at 18% 48%,
+            rgba(248, 221, 190, 0.24),
+            transparent 64%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(25, 16, 10, 0.08),
+            rgba(25, 16, 10, 0.38)
+          );
       }
       .hero::after {
         inset: auto 0 0;
@@ -718,8 +777,17 @@
         z-index: 2;
         pointer-events: none;
         background:
-          linear-gradient(180deg, rgba(35, 20, 12, 0.24), transparent 34%, rgba(35, 20, 12, 0.36)),
-          radial-gradient(55% 60% at 86% 42%, rgba(244, 139, 111, 0.2), transparent 70%);
+          linear-gradient(
+            180deg,
+            rgba(35, 20, 12, 0.24),
+            transparent 34%,
+            rgba(35, 20, 12, 0.36)
+          ),
+          radial-gradient(
+            55% 60% at 86% 42%,
+            rgba(244, 139, 111, 0.2),
+            transparent 70%
+          );
       }
       .hc-cap {
         position: absolute;
@@ -2240,6 +2308,40 @@
         box-shadow: var(--shadow-sm);
         color: var(--coral);
       }
+      .dest-search {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition:
+          max-height 0.3s var(--ease),
+          opacity 0.25s var(--ease),
+          margin 0.3s var(--ease);
+      }
+      .dest-search.open {
+        max-height: 60px;
+        opacity: 1;
+        margin-bottom: 16px;
+      }
+      .dest-search input {
+        width: 100%;
+        padding: 0.85em 1.2em;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: #fff;
+        font: inherit;
+        color: var(--ink);
+        box-shadow: var(--shadow-sm);
+      }
+      .dest-search input:focus {
+        outline: none;
+        border-color: var(--coral);
+      }
+      .dest-empty {
+        grid-column: 1/-1;
+        text-align: center;
+        padding: 40px 16px;
+        color: var(--ink-soft);
+      }
       .filters {
         display: flex;
         gap: 10px;
@@ -2585,7 +2687,11 @@
         inset: 0;
         z-index: 1;
         pointer-events: none;
-        background: linear-gradient(180deg, rgba(20, 12, 6, 0.05) 55%, rgba(20, 12, 6, 0.45) 100%);
+        background: linear-gradient(
+          180deg,
+          rgba(20, 12, 6, 0.05) 55%,
+          rgba(20, 12, 6, 0.45) 100%
+        );
       }
       .hero-play {
         position: absolute;
@@ -2797,8 +2903,17 @@
         }
         .hero::before {
           background:
-            linear-gradient(180deg, rgba(35, 22, 14, 0.74) 0%, rgba(35, 22, 14, 0.54) 48%, rgba(35, 22, 14, 0.78) 100%),
-            radial-gradient(80% 54% at 50% 36%, rgba(248, 221, 190, 0.18), transparent 70%);
+            linear-gradient(
+              180deg,
+              rgba(35, 22, 14, 0.74) 0%,
+              rgba(35, 22, 14, 0.54) 48%,
+              rgba(35, 22, 14, 0.78) 100%
+            ),
+            radial-gradient(
+              80% 54% at 50% 36%,
+              rgba(248, 221, 190, 0.18),
+              transparent 70%
+            );
         }
         .hero-grid {
           grid-template-columns: 1fr;
@@ -2915,6 +3030,9 @@
         }
         main {
           padding-bottom: 76px;
+        }
+        .site-footer {
+          padding-bottom: calc(76px + env(safe-area-inset-bottom));
         }
         .site-header .wrap {
           padding-block: 14px;
@@ -3109,7 +3227,12 @@
     <!-- ======================= HEADER ======================= -->
     <header class="site-header" id="header">
       <div class="wrap">
-        <a href="#" class="brand" data-nav="home" aria-label="Tours and Travels home">
+        <a
+          href="#"
+          class="brand"
+          data-nav="home"
+          aria-label="Tours and Travels home"
+        >
           <svg class="lotus" viewBox="0 0 48 48" fill="none" aria-hidden="true">
             <path
               d="M24 40c-8 0-15-5-15-11 4 0 8 2 10 5-3-6-3-13 5-19 8 6 8 13 5 19 2-3 6-5 10-5 0 6-7 11-15 11Z"
@@ -3136,15 +3259,33 @@
           <a href="#" class="nav-static">Medical Tourism</a>
           <a href="#" class="nav-static">Wellness Trip</a>
           <div class="nav-item">
-            <button type="button" class="nav-parent" aria-haspopup="true" aria-expanded="false">
+            <button
+              type="button"
+              class="nav-parent"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               <span class="nav-label">Guest House</span>
-              <svg class="nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg
+                class="nav-caret"
+                width="10"
+                height="10"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
             <div class="nav-dropdown">
               <div class="nav-dropdown-inner">
-                <a href="#" data-nav="mayapur"><span class="nav-label">Mayapur</span></a>
+                <a href="#" data-nav="mayapur"
+                  ><span class="nav-label">Mayapur</span></a
+                >
               </div>
             </div>
           </div>
@@ -3152,7 +3293,21 @@
         </nav>
 
         <div class="header-cta">
-          <button class="btn plan-trip">Plan Your Trip</button>
+          <a href="#packages" data-nav="home" class="btn plan-trip"
+            >Plan Your Trip
+            <span class="ar"
+              ><svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.4"
+                stroke-linecap="round"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" /></svg
+            ></span>
+          </a>
           <button
             class="menu-toggle"
             id="menuToggle"
@@ -3209,7 +3364,18 @@
         <div class="drawer-group">
           <button type="button" class="drawer-toggle" aria-expanded="false">
             Guest House
-            <svg class="nav-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg
+              class="nav-caret"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
               <path d="M6 9l6 6 6-6" />
             </svg>
           </button>
@@ -3219,7 +3385,7 @@
         </div>
         <a href="#contact" data-drawer>Contact</a>
       </nav>
-      <button class="btn" data-drawer>
+      <a href="#packages" class="btn plan-trip" data-drawer>
         Plan Your Trip
         <span class="ar"
           ><svg
@@ -3233,7 +3399,7 @@
           >
             <path d="M5 12h14M13 6l6 6-6 6" /></svg
         ></span>
-      </button>
+      </a>
     </aside>
 
     <!-- Contact form confirmation modal -->
@@ -3275,8 +3441,8 @@
       </div>
       <h3 id="modalTitle">Message Sent!</h3>
       <p>
-        Thanks for reaching out — our travel experts will get back to you
-        within 24 hours.
+        Thanks for reaching out — our travel experts will get back to you within
+        24 hours.
       </p>
       <button class="btn" id="modalOk">
         Got It
@@ -3498,6 +3664,7 @@
                 <span
                   ><span class="lab">Where to?</span
                   ><input
+                    id="heroWhere"
                     placeholder="Search Destinations"
                     aria-label="Search destinations"
                 /></span>
@@ -3582,7 +3749,7 @@
                 </span>
               </div>
               <div class="search-go">
-                <button class="btn">
+                <button class="btn" id="heroSearchBtn" type="button">
                   Find Your Journey
                   <span class="ar"
                     ><svg
@@ -3661,16 +3828,40 @@
               ></a>
             </div>
             <div class="dest-carousel" id="destCarousel">
-              <button class="dc-arrow prev" id="destPrev" type="button" aria-label="Previous destination">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <button
+                class="dc-arrow prev"
+                id="destPrev"
+                type="button"
+                aria-label="Previous destination"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
                   <path d="M15 6l-6 6 6 6" />
                 </svg>
               </button>
               <div class="dc-viewport" id="destViewport">
                 <div class="dc-track" id="destTrack"></div>
               </div>
-              <button class="dc-arrow next" id="destNext" type="button" aria-label="Next destination">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <button
+                class="dc-arrow next"
+                id="destNext"
+                type="button"
+                aria-label="Next destination"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
                   <path d="M9 6l6 6-6 6" />
                 </svg>
               </button>
@@ -3851,9 +4042,9 @@
             <div class="contact-box reveal">
               <div class="contact-info">
                 <p>
-                  Have a question about a trip, want a custom itinerary, or
-                  just want to say namaste? Drop us a message — our travel
-                  experts reply within 24 hours.
+                  Have a question about a trip, want a custom itinerary, or just
+                  want to say namaste? Drop us a message — our travel experts
+                  reply within 24 hours.
                 </p>
                 <div class="cinfo-row">
                   <span class="cic"
@@ -3898,7 +4089,8 @@
                     >
                       <path
                         d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0Z"
-                      /><circle cx="12" cy="10" r="3" /></svg
+                      />
+                      <circle cx="12" cy="10" r="3" /></svg
                   ></span>
                   <div><b>Visit</b><span>Jaipur, Rajasthan, India</span></div>
                 </div>
@@ -3914,7 +4106,12 @@
                     >
                       <rect x="3" y="3" width="18" height="18" rx="5" />
                       <circle cx="12" cy="12" r="4" />
-                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" /></svg
+                      <circle
+                        cx="17.5"
+                        cy="6.5"
+                        r="1"
+                        fill="currentColor"
+                      /></svg
                   ></a>
                   <a href="#" aria-label="Facebook"
                     ><svg
@@ -3944,7 +4141,11 @@
                 <div class="cf-row">
                   <label class="cfield"
                     ><span>Full Name</span
-                    ><input type="text" name="name" required placeholder="Your name"
+                    ><input
+                      type="text"
+                      name="name"
+                      required
+                      placeholder="Your name"
                   /></label>
                   <label class="cfield"
                     ><span>Email Address</span
@@ -3958,11 +4159,17 @@
                 <div class="cf-row">
                   <label class="cfield"
                     ><span>Phone</span
-                    ><input type="tel" name="phone" placeholder="+91 00000 00000"
+                    ><input
+                      type="tel"
+                      name="phone"
+                      placeholder="+91 00000 00000"
                   /></label>
                   <label class="cfield"
                     ><span>Subject</span
-                    ><input type="text" name="subject" placeholder="Trip enquiry"
+                    ><input
+                      type="text"
+                      name="subject"
+                      placeholder="Trip enquiry"
                   /></label>
                 </div>
                 <label class="cfield"
@@ -3972,8 +4179,8 @@
                     rows="5"
                     required
                     placeholder="Tell us about your dream trip..."
-                  ></textarea
-                ></label>
+                  ></textarea>
+                </label>
                 <button class="btn" type="submit">
                   Send Message
                   <span class="ar"
@@ -4014,7 +4221,7 @@
               </svg>
             </button>
             <h1>Destinations</h1>
-            <button class="srch" aria-label="Search">
+            <button class="srch" id="destSearchToggle" aria-label="Search">
               <svg
                 width="20"
                 height="20"
@@ -4027,6 +4234,14 @@
                 <path d="M21 21l-4-4" />
               </svg>
             </button>
+          </div>
+          <div class="dest-search" id="destSearchWrap">
+            <input
+              type="text"
+              id="destSearchInput"
+              placeholder="Search by name, region or state"
+              aria-label="Search destinations"
+            />
           </div>
           <div class="filters" id="filters">
             <button class="active" data-region="all">All</button>
@@ -4094,7 +4309,11 @@
               </svg>
             </button>
             <h1>Mayapur</h1>
-            <button class="back ghost" aria-hidden="true" tabindex="-1"></button>
+            <button
+              class="back ghost"
+              aria-hidden="true"
+              tabindex="-1"
+            ></button>
           </div>
 
           <div class="mayapur-hero ph">
@@ -4104,14 +4323,25 @@
               referrerpolicy="no-referrer"
               loading="lazy"
             />
-            <button class="hero-play" id="mayapurTourBtn" type="button" aria-label="Watch room tour video">
+            <button
+              class="hero-play"
+              id="mayapurTourBtn"
+              type="button"
+              aria-label="Watch room tour video"
+            >
               <span class="hero-play-ring" aria-hidden="true"></span>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M8 5v14l11-7Z" />
               </svg>
             </button>
             <span class="hero-play-label">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
                 <path d="M8 5v14l11-7Z" />
               </svg>
               Watch Room Tour
@@ -4122,8 +4352,8 @@
             <span class="eyebrow">Guest House · Mayapur</span>
             <h2>A Peaceful Stay in the Holy Town of Mayapur</h2>
             <p>
-              Comfortable rooms minutes from the ISKCON temple — a calm
-              base for pilgrimage, wellness, and medical-tourism stays.
+              Comfortable rooms minutes from the ISKCON temple — a calm base for
+              pilgrimage, wellness, and medical-tourism stays.
             </p>
           </div>
 
@@ -4382,7 +4612,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© 2024 Tours and Travels. All rights reserved.</span>
+          <span>© 2026 Tours and Travels. All rights reserved.</span>
           <span class="made">Made with <span class="hb">♥</span> in India</span>
         </div>
       </div>
@@ -4461,14 +4691,15 @@
         "photo-1561361058-c24cd5f88e02": "assets/images/varanasi.jpeg",
         "photo-1581793745862-99fde7fa73d2": "assets/images/ladakh.jpg",
         "photo-1512343879784-a960bf40e7f2": "assets/images/goa.jpg",
-        "photo-1605368525834-d7f8b9e4e4d4": "assets/images/varanashidiwali.jpeg",
+        "photo-1605368525834-d7f8b9e4e4d4":
+          "assets/images/varanashidiwali.jpeg",
         "photo-1615461066159-fea0960485d5": "assets/images/holi.jpg",
         "photo-1583074321871-9f0d20e1f8f5": "assets/images/dance.jpg",
         "photo-1516815231560-8f41ec531527": "assets/images/camel-fair.jpg",
         mayapur: "assets/images/mayapur/mayapur-img.webp",
         "photo-1544005313-94ddf0286df2": "assets/images/traveler-1.png",
         "photo-1500648767791-00dcc994a43e": "assets/images/traveler-2.png",
-        "photo-1534528741775-53994a69daeb": "assets/images/traveler-3.jpg"
+        "photo-1534528741775-53994a69daeb": "assets/images/traveler-3.jpg",
       };
       const img = (id) => localImages[id] || "assets/images/hero-palace.jpg";
 
@@ -4961,8 +5192,12 @@
           clearInterval(timer);
         }
 
-        document.getElementById("heroPrev").addEventListener("click", () => go(idx - 1, true));
-        document.getElementById("heroNext").addEventListener("click", () => go(idx + 1, true));
+        document
+          .getElementById("heroPrev")
+          .addEventListener("click", () => go(idx - 1, true));
+        document
+          .getElementById("heroNext")
+          .addEventListener("click", () => go(idx + 1, true));
 
         carousel.addEventListener("mouseenter", stop);
         carousel.addEventListener("mouseleave", reset);
@@ -5034,7 +5269,9 @@
         featurePopupScrim.classList.remove("open");
         document.body.style.overflow = "";
       }
-      document.getElementById("featurePopupClose").addEventListener("click", closeFeaturePopup);
+      document
+        .getElementById("featurePopupClose")
+        .addEventListener("click", closeFeaturePopup);
       featurePopupScrim.addEventListener("click", (e) => {
         if (e.target === featurePopupScrim) closeFeaturePopup();
       });
@@ -5111,7 +5348,8 @@
         function render() {
           const logical = ((index % N) + N) % N;
           const displayIndex = N + logical;
-          const offset = displayIndex * cardStep - viewport.clientWidth / 2 + cardStep / 2;
+          const offset =
+            displayIndex * cardStep - viewport.clientWidth / 2 + cardStep / 2;
           track.style.transform = `translate3d(${-offset}px,0,0)`;
 
           for (let k = 0; k < cards.length; k++) {
@@ -5284,11 +5522,23 @@
    DESTINATIONS LIST VIEW
    ========================================================================== */
       const destList = document.getElementById("destList");
-      function renderList(region = "all") {
+      function matchesQuery(d, q) {
+        if (!q) return true;
+        const hay = [d.name, d.region, d.zone, d.tag, d.subtitle, d.group]
+          .join(" ")
+          .toLowerCase();
+        return hay.includes(q.trim().toLowerCase());
+      }
+      function renderList(region = "all", query = "") {
         destList.innerHTML = "";
-        destinations
+        const filtered = destinations
           .filter((d) => region === "all" || d.zone === region)
-          .forEach((d, i) => {
+          .filter((d) => matchesQuery(d, query));
+        if (!filtered.length) {
+          destList.innerHTML = `<p class="dest-empty">No destinations match "${query}". Try another place or state.</p>`;
+          return;
+        }
+        filtered.forEach((d, i) => {
             const c = el("article", "lcard ph");
             c.style.setProperty("--g", d.g);
             c.innerHTML = `<span class="dnum">${String(i + 1).padStart(2, "0")}</span>
@@ -5318,8 +5568,46 @@
             .querySelectorAll("#filters button")
             .forEach((x) => x.classList.remove("active"));
           b.classList.add("active");
-          renderList(b.dataset.region);
+          renderList(b.dataset.region, destSearchInput.value.trim());
         });
+      });
+
+      /* Destinations-view search box (toggled via the header search icon) */
+      const destSearchWrap = document.getElementById("destSearchWrap");
+      const destSearchInput = document.getElementById("destSearchInput");
+      document.getElementById("destSearchToggle").addEventListener("click", () => {
+        destSearchWrap.classList.toggle("open");
+        if (destSearchWrap.classList.contains("open")) destSearchInput.focus();
+      });
+      destSearchInput.addEventListener("input", () => {
+        const activeRegion = document.querySelector("#filters .active").dataset.region;
+        renderList(activeRegion, destSearchInput.value.trim());
+      });
+
+      /* Homepage hero search bar — jumps into the Destinations view
+         filtered to whatever the visitor typed (place, state, region…). */
+      function heroSearch() {
+        const q = document.getElementById("heroWhere").value.trim();
+        go("destinations");
+        document
+          .querySelectorAll("#filters button")
+          .forEach((b) => b.classList.remove("active"));
+        document
+          .querySelector('#filters [data-region="all"]')
+          .classList.add("active");
+        destSearchInput.value = q;
+        destSearchWrap.classList.toggle("open", !!q);
+        renderList("all", q);
+      }
+      document.getElementById("heroSearchBtn").addEventListener("click", (e) => {
+        e.preventDefault();
+        heroSearch();
+      });
+      document.getElementById("heroWhere").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          heroSearch();
+        }
       });
 
       /* ==========================================================================
@@ -5445,7 +5733,13 @@
 
       /* Open a single home section as its own standalone page (hides
          everything else — hero, other sections, footer — except that one). */
-      const soloSectionIds = ["packages", "experiences", "about", "stories", "contact"];
+      const soloSectionIds = [
+        "packages",
+        "experiences",
+        "about",
+        "stories",
+        "contact",
+      ];
       function openPage(id) {
         if (id === "destinations") {
           go("destinations");
@@ -5462,7 +5756,11 @@
         document
           .querySelectorAll(".bottom-nav a")
           .forEach((a) => a.classList.remove("active"));
-        const bn = { experiences: "bn-exp", packages: "bn-trips", contact: "bn-profile" }[id];
+        const bn = {
+          experiences: "bn-exp",
+          packages: "bn-trips",
+          contact: "bn-profile",
+        }[id];
         if (bn) document.getElementById(bn)?.classList.add("active");
         window.scrollTo({ top: 0, behavior: "auto" });
       }
@@ -5571,7 +5869,9 @@
           document.querySelectorAll(".nav-item.open").forEach((other) => {
             if (other !== item) {
               other.classList.remove("open");
-              other.querySelector(".nav-parent").setAttribute("aria-expanded", "false");
+              other
+                .querySelector(".nav-parent")
+                .setAttribute("aria-expanded", "false");
             }
           });
           item.classList.toggle("open", !isOpen);
@@ -5581,14 +5881,18 @@
       document.addEventListener("click", () => {
         document.querySelectorAll(".nav-item.open").forEach((item) => {
           item.classList.remove("open");
-          item.querySelector(".nav-parent").setAttribute("aria-expanded", "false");
+          item
+            .querySelector(".nav-parent")
+            .setAttribute("aria-expanded", "false");
         });
       });
       addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
           document.querySelectorAll(".nav-item.open").forEach((item) => {
             item.classList.remove("open");
-            item.querySelector(".nav-parent").setAttribute("aria-expanded", "false");
+            item
+              .querySelector(".nav-parent")
+              .setAttribute("aria-expanded", "false");
           });
         }
       });
@@ -5601,7 +5905,9 @@
           document.querySelectorAll(".drawer-group.open").forEach((other) => {
             if (other !== group) {
               other.classList.remove("open");
-              other.querySelector(".drawer-toggle").setAttribute("aria-expanded", "false");
+              other
+                .querySelector(".drawer-toggle")
+                .setAttribute("aria-expanded", "false");
             }
           });
           group.classList.toggle("open", !isOpen);
@@ -5661,8 +5967,12 @@
         document.body.style.overflow = "";
         mayapurVideo.pause();
       }
-      document.getElementById("mayapurTourBtn").addEventListener("click", openVideoModal);
-      document.getElementById("videoModalClose").addEventListener("click", closeVideoModal);
+      document
+        .getElementById("mayapurTourBtn")
+        .addEventListener("click", openVideoModal);
+      document
+        .getElementById("videoModalClose")
+        .addEventListener("click", closeVideoModal);
       videoModalScrim.addEventListener("click", (e) => {
         if (e.target === videoModalScrim) closeVideoModal();
       });
@@ -5684,7 +5994,9 @@
           .forEach((l) => l.classList.remove("active"));
         el?.classList.add("active");
       }
-      const navLinks = [...document.querySelectorAll(".nav > a:not(.nav-static)")];
+      const navLinks = [
+        ...document.querySelectorAll(".nav > a:not(.nav-static)"),
+      ];
       document.querySelectorAll(".nav > a.nav-static").forEach((a) =>
         a.addEventListener("click", (e) => {
           e.preventDefault();
