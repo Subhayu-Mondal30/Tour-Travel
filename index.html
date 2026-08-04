@@ -2667,20 +2667,141 @@
         box-shadow: none;
         background: none;
       }
+      .mayapur-top {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(28px, 3vw, 48px);
+        align-items: start;
+        margin-top: 18px;
+      }
+      .mayapur-summary {
+        display: grid;
+        gap: 22px;
+        align-content: start;
+        background: linear-gradient(180deg, rgba(255, 250, 242, 0.96), #fff);
+        border: 1px solid rgba(226, 116, 91, 0.16);
+        border-radius: 36px;
+        padding: clamp(30px, 3vw, 42px);
+        box-shadow: 0 30px 70px -42px rgba(74, 50, 34, 0.32);
+      }
+      .mayapur-summary .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75em;
+        font-size: clamp(1.05rem, 1.4vw, 1.35rem);
+      }
+      .mayapur-summary .eyebrow::before {
+        content: "Premium Stay";
+        font-family: var(--font-sans);
+        font-size: 0.75rem;
+        color: var(--coral-d);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      .mayapur-summary h2 {
+        font-family: var(--font-serif);
+        font-size: clamp(2rem, 3vw, 3rem);
+        line-height: 1.04;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+      .mayapur-summary p {
+        color: var(--ink-2);
+        font-size: 1rem;
+        line-height: 1.85;
+        max-width: 48ch;
+      }
+      .mayapur-feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .mayapur-feature {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        padding: 22px 22px;
+        border-radius: 26px;
+        background: #fff;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease);
+      }
+      .mayapur-feature:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 34px rgba(74, 50, 34, 0.14);
+      }
+      .mayapur-feature .chip {
+        width: 44px;
+        min-width: 44px;
+        height: 44px;
+        font-size: 1rem;
+        color: var(--coral);
+        background: var(--peach-a);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+      }
+      .mayapur-feature strong {
+        display: block;
+        font-size: 1rem;
+        color: var(--ink);
+      }
+      .mayapur-feature span {
+        display: block;
+        color: var(--ink-2);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+      .mayapur-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .mayapur-actions .btn {
+        min-width: 180px;
+        padding: 0.95em 1.6em;
+        flex: 0 1 auto;
+      }
+      .mayapur-actions .link-arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5em;
+        color: var(--coral-d);
+        font-weight: 600;
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
+        transition: color 0.22s ease, transform 0.22s ease;
+      }
+      .mayapur-actions .link-arrow:hover {
+        color: var(--coral);
+        transform: translateX(2px);
+      }
       .mayapur-hero {
         position: relative;
         width: 100%;
-        max-width: var(--maxw);
-        margin-inline: auto;
-        border-radius: 26px;
+        min-height: 520px;
+        border-radius: 32px;
         overflow: hidden;
-        aspect-ratio: 16 / 10;
-        max-height: 480px;
-        box-shadow: var(--shadow-md);
-        --g: linear-gradient(160deg, #f6d3a6, #e79a63 55%, #b9663f);
+        box-shadow: var(--shadow-lg);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
-      /* Dim the hero photo just enough for the play control + label to
-         stay readable over any image. */
+      .mayapur-hero:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 28px 62px -28px rgba(74, 50, 34, 0.28);
+      }
+      .mayapur-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.45s ease, filter 0.3s ease;
+      }
+      .mayapur-hero:hover img {
+        transform: scale(1.02);
+      }
       .mayapur-hero::after {
         content: "";
         position: absolute;
@@ -2689,9 +2810,31 @@
         pointer-events: none;
         background: linear-gradient(
           180deg,
-          rgba(20, 12, 6, 0.05) 55%,
-          rgba(20, 12, 6, 0.45) 100%
+          rgba(20, 12, 6, 0.08) 32%,
+          rgba(20, 12, 6, 0.34) 100%
         );
+      }
+      .mayapur-hero-badge {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.94);
+        color: var(--ink);
+        box-shadow: 0 20px 36px -24px rgba(74, 50, 34, 0.24);
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+      .mayapur-hero-badge span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--coral);
       }
       .hero-play {
         position: absolute;
@@ -2699,133 +2842,172 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 72px;
-        height: 72px;
+        width: 68px;
+        height: 68px;
         border: none;
         border-radius: 50%;
-        background: rgba(255, 250, 242, 0.94);
+        background: rgba(255, 255, 255, 0.94);
         display: grid;
         place-items: center;
         color: var(--coral-d);
         cursor: pointer;
-        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
-        transition:
-          transform 0.3s var(--ease),
-          background 0.3s;
+        box-shadow: 0 20px 42px rgba(74, 50, 34, 0.2);
+        transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
       }
       .hero-play:hover {
-        transform: translate(-50%, -50%) scale(1.08);
+        transform: translate(-50%, -50%) scale(1.04);
         background: #fff;
+        box-shadow: 0 30px 52px rgba(74, 50, 34, 0.16);
       }
       .hero-play svg {
-        width: 24px;
-        height: 24px;
-        margin-left: 3px;
+        width: 22px;
+        height: 22px;
       }
       .hero-play-ring {
         position: absolute;
-        inset: -14px;
+        inset: -12px;
         border-radius: 50%;
-        border: 2px solid rgba(255, 250, 242, 0.55);
-        animation: heroPlayPulse 2.6s ease-out infinite;
-      }
-      @keyframes heroPlayPulse {
-        0% {
-          transform: scale(0.85);
-          opacity: 0.9;
-        }
-        70% {
-          transform: scale(1.4);
-          opacity: 0;
-        }
-        100% {
-          opacity: 0;
-        }
+        border: 2px solid rgba(255, 255, 255, 0.74);
+        animation: heroPlayPulse 4.5s ease-out infinite;
       }
       .hero-play-label {
         position: absolute;
         z-index: 2;
         left: 50%;
-        bottom: 20px;
+        bottom: 18px;
         transform: translateX(-50%);
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 8px;
         color: #fffaf2;
         font-weight: 600;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         letter-spacing: 0.01em;
         background: rgba(20, 12, 6, 0.34);
-        backdrop-filter: blur(6px);
-        padding: 7px 16px;
+        backdrop-filter: blur(8px);
+        padding: 10px 18px;
         border-radius: 999px;
         pointer-events: none;
       }
-      /* Intro copy sits flush with the hero/gallery's left edge on
-         desktop instead of floating as a narrow centered column — and
-         stays short enough not to need that extra width anyway. */
-      .mayapur-intro {
-        max-width: 60ch;
-        margin: 20px 0 0;
-      }
-      .mayapur-intro .eyebrow {
-        font-size: clamp(1.15rem, 2vw, 1.5rem);
-      }
-      .mayapur-intro h2 {
-        font-family: var(--font-serif);
-        font-size: clamp(1.3rem, 2.3vw, 1.65rem);
-        color: var(--ink);
-        margin-top: 2px;
-      }
-      .mayapur-intro p {
-        margin-top: 8px;
-        color: var(--ink-2);
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-      /* Compact, scrollable filmstrip instead of a tall multi-row grid —
-         drag/scroll through the rooms like a carousel. */
       .mayapur-gallery {
-        display: flex;
-        gap: 14px;
-        margin-top: 22px;
-        max-width: var(--maxw);
-        margin-inline: auto;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scroll-padding-inline: clamp(18px, 4vw, 40px);
-        padding-bottom: 6px;
-        scrollbar-width: none;
-        -webkit-mask-image: linear-gradient(
-          to right,
-          transparent 0,
-          #000 24px,
-          #000 calc(100% - 24px),
-          transparent 100%
-        );
-        mask-image: linear-gradient(
-          to right,
-          transparent 0,
-          #000 24px,
-          #000 calc(100% - 24px),
-          transparent 100%
-        );
-      }
-      .mayapur-gallery::-webkit-scrollbar {
-        display: none;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
       }
       .mayapur-gallery .ph {
-        flex: 0 0 auto;
-        width: min(230px, 58vw);
-        aspect-ratio: 1.15;
-        border-radius: 18px;
-        scroll-snap-align: start;
+        width: 100%;
+        aspect-ratio: 1.2;
+        border-radius: 24px;
         box-shadow: var(--shadow-sm);
-        --g: linear-gradient(160deg, #e2ad78, #a4592f);
-        transition: transform 0.35s var(--ease);
+        transition: transform 0.3s ease, filter 0.3s ease;
       }
       .mayapur-gallery .ph:hover {
         transform: translateY(-4px);
+        filter: saturate(1.04) contrast(1.03);
+      }
+      .mayapur-gallery .ph img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .mayapur-gallery::before {
+        content: "Guest House Gallery";
+        grid-column: 1 / -1;
+        font-family: var(--font-serif);
+        font-size: 1.2rem;
+        letter-spacing: 0.02em;
+        color: var(--ink-2);
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 1160px) {
+        .mayapur-top {
+          grid-template-columns: 1fr;
+        }
+        .mayapur-summary,
+        .mayapur-hero {
+          min-height: auto;
+        }
+        .mayapur-hero {
+          min-height: 420px;
+        }
+        .mayapur-feature-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 920px) {
+        .mayapur-summary {
+          padding: 24px 18px;
+        }
+        .mayapur-feature {
+          padding: 16px 18px;
+        }
+        .mayapur-actions {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          justify-content: flex-start;
+        }
+        .mayapur-actions .btn {
+          width: 100%;
+          min-width: 0;
+          flex: 1 1 100%;
+          padding: 0.95em 1.2em;
+        }
+        .mayapur-actions .link-arrow {
+          width: auto;
+          flex: 0 1 auto;
+          min-width: 0;
+          justify-content: center;
+          text-align: center;
+          padding: 0.95em 1.2em;
+          display: inline-flex;
+          align-items: center;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .mayapur-top {
+          gap: 20px;
+        }
+        .mayapur-summary {
+          padding: 22px 16px;
+          border-radius: 26px;
+        }
+        .mayapur-summary .eyebrow {
+          font-size: 1.15rem;
+        }
+        .mayapur-summary h2 {
+          font-size: 2rem;
+        }
+        .mayapur-feature-grid {
+          gap: 12px;
+        }
+        .mayapur-hero {
+          min-height: 320px;
+        }
+        .mayapur-hero-badge {
+          top: 18px;
+          left: 18px;
+          padding: 10px 14px;
+        }
+        .hero-play {
+          width: 64px;
+          height: 64px;
+        }
+        .hero-play-label {
+          bottom: 14px;
+          font-size: 0.82rem;
+          padding: 10px 16px;
+        }
+        .mayapur-gallery {
+          grid-template-columns: 1fr;
+        }
+        .mayapur-gallery .ph {
+          aspect-ratio: 1.35;
+        }
       }
 
       /* ==========================================================================
@@ -4316,48 +4498,91 @@
             ></button>
           </div>
 
-          <div class="mayapur-hero ph">
-            <img
-              src="assets/images/mayapur/mayapur-img.webp"
-              alt="Mayapur guest house exterior"
-              referrerpolicy="no-referrer"
-              loading="lazy"
-            />
-            <button
-              class="hero-play"
-              id="mayapurTourBtn"
-              type="button"
-              aria-label="Watch room tour video"
-            >
-              <span class="hero-play-ring" aria-hidden="true"></span>
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M8 5v14l11-7Z" />
-              </svg>
-            </button>
-            <span class="hero-play-label">
-              <svg
-                width="13"
-                height="13"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
+          <div class="mayapur-top">
+            <div class="mayapur-summary">
+              <span class="eyebrow">Guest House · Mayapur</span>
+              <h2>A Peaceful Stay in the Holy Town of Mayapur</h2>
+              <p>
+                Comfortable rooms minutes from the ISKCON temple — a calm base for
+                pilgrimage, wellness, and medical-tourism stays.
+              </p>
+              <div class="mayapur-feature-grid">
+                <div class="mayapur-feature">
+                  <span class="chip">1</span>
+                  <div>
+                    <strong>Sanctuary Rooms</strong>
+                    <span>Elegantly appointed suites with local textures and serene views.</span>
+                  </div>
+                </div>
+                <div class="mayapur-feature">
+                  <span class="chip">2</span>
+                  <div>
+                    <strong>Curated Wellness</strong>
+                    <span>Daily meditation rituals, nourishing meals, and restorative rest.</span>
+                  </div>
+                </div>
+                <div class="mayapur-feature">
+                  <span class="chip">3</span>
+                  <div>
+                    <strong>Temple Proximity</strong>
+                    <span>Just minutes from ISKCON and the sacred ghats for peaceful pilgrimage.</span>
+                  </div>
+                </div>
+                <div class="mayapur-feature">
+                  <span class="chip">4</span>
+                  <div>
+                    <strong>Personalized Service</strong>
+                    <span>Tailored guest experiences for travelers seeking premium calm.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mayapur-actions">
+                <button class="btn">Book Your Stay</button>
+                <a class="link-arrow" href="#mayapur-gallery">
+                  View Gallery
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"></path>
+                    <path d="m13 6 6 6-6 6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="mayapur-hero ph">
+              <img
+                src="assets/images/mayapur/mayapur-img.webp"
+                alt="Mayapur guest house exterior"
+                referrerpolicy="no-referrer"
+                loading="lazy"
+              />
+              <div class="mayapur-hero-badge"><span></span>Mayapur Guest House</div>
+              <button
+                class="hero-play"
+                id="mayapurTourBtn"
+                type="button"
+                aria-label="Watch room tour video"
               >
-                <path d="M8 5v14l11-7Z" />
-              </svg>
-              Watch Room Tour
-            </span>
+                <span class="hero-play-ring" aria-hidden="true"></span>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7Z" />
+                </svg>
+              </button>
+              <span class="hero-play-label">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M8 5v14l11-7Z" />
+                </svg>
+                Watch Room Tour
+              </span>
+            </div>
           </div>
 
-          <div class="mayapur-intro">
-            <span class="eyebrow">Guest House · Mayapur</span>
-            <h2>A Peaceful Stay in the Holy Town of Mayapur</h2>
-            <p>
-              Comfortable rooms minutes from the ISKCON temple — a calm base for
-              pilgrimage, wellness, and medical-tourism stays.
-            </p>
-          </div>
-
-          <div class="mayapur-gallery">
+          <div class="mayapur-gallery" id="mayapur-gallery">
             <div class="ph">
               <img
                 src="assets/images/mayapur/mayapur-room-1.webp"
@@ -5539,28 +5764,28 @@
           return;
         }
         filtered.forEach((d, i) => {
-            const c = el("article", "lcard ph");
-            c.style.setProperty("--g", d.g);
-            c.innerHTML = `<span class="dnum">${String(i + 1).padStart(2, "0")}</span>
+          const c = el("article", "lcard ph");
+          c.style.setProperty("--g", d.g);
+          c.innerHTML = `<span class="dnum">${String(i + 1).padStart(2, "0")}</span>
       <img alt="${d.name}" referrerpolicy="no-referrer" loading="lazy">
       <div class="lbody"><div><div class="lname">${d.name}</div><div class="lsub">${d.region}</div></div>
       <span class="chip">${svgWrap('<path d="M5 12h14M13 6l6 6-6 6"/>', 15)}</span></div>`;
-            const im = c.querySelector("img");
-            im.onerror = () => c.classList.add("is-broken");
-            im.src = d.img;
-            c.addEventListener("click", () => openDetail(d.name));
-            destList.appendChild(c);
-            requestAnimationFrame(() => {
-              c.style.opacity = 0;
-              c.style.transform = "translateY(18px)";
-              setTimeout(() => {
-                c.style.transition =
-                  "opacity .5s var(--ease),transform .5s var(--ease)";
-                c.style.opacity = 1;
-                c.style.transform = "none";
-              }, i * 55);
-            });
+          const im = c.querySelector("img");
+          im.onerror = () => c.classList.add("is-broken");
+          im.src = d.img;
+          c.addEventListener("click", () => openDetail(d.name));
+          destList.appendChild(c);
+          requestAnimationFrame(() => {
+            c.style.opacity = 0;
+            c.style.transform = "translateY(18px)";
+            setTimeout(() => {
+              c.style.transition =
+                "opacity .5s var(--ease),transform .5s var(--ease)";
+              c.style.opacity = 1;
+              c.style.transform = "none";
+            }, i * 55);
           });
+        });
       }
       document.querySelectorAll("#filters button").forEach((b) => {
         b.addEventListener("click", () => {
@@ -5575,12 +5800,16 @@
       /* Destinations-view search box (toggled via the header search icon) */
       const destSearchWrap = document.getElementById("destSearchWrap");
       const destSearchInput = document.getElementById("destSearchInput");
-      document.getElementById("destSearchToggle").addEventListener("click", () => {
-        destSearchWrap.classList.toggle("open");
-        if (destSearchWrap.classList.contains("open")) destSearchInput.focus();
-      });
+      document
+        .getElementById("destSearchToggle")
+        .addEventListener("click", () => {
+          destSearchWrap.classList.toggle("open");
+          if (destSearchWrap.classList.contains("open"))
+            destSearchInput.focus();
+        });
       destSearchInput.addEventListener("input", () => {
-        const activeRegion = document.querySelector("#filters .active").dataset.region;
+        const activeRegion =
+          document.querySelector("#filters .active").dataset.region;
         renderList(activeRegion, destSearchInput.value.trim());
       });
 
@@ -5599,10 +5828,12 @@
         destSearchWrap.classList.toggle("open", !!q);
         renderList("all", q);
       }
-      document.getElementById("heroSearchBtn").addEventListener("click", (e) => {
-        e.preventDefault();
-        heroSearch();
-      });
+      document
+        .getElementById("heroSearchBtn")
+        .addEventListener("click", (e) => {
+          e.preventDefault();
+          heroSearch();
+        });
       document.getElementById("heroWhere").addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
           e.preventDefault();
