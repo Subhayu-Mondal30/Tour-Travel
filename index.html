@@ -17,6 +17,10 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <style>
       /* ==========================================================================
    TOURS AND TRAVELS — Design tokens
@@ -1106,6 +1110,585 @@
         font-size: clamp(1.8rem, 3.6vw, 2.7rem);
         line-height: 1.1;
         color: var(--ink);
+      }
+
+      .wellness-hero {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(72px, 9vw, 110px) 0 72px;
+        background: linear-gradient(
+          180deg,
+          rgba(251, 234, 217, 0.94),
+          rgba(255, 255, 255, 0.96)
+        );
+      }
+      .wellness-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(228, 116, 91, 0.14),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at left center,
+            rgba(198, 162, 76, 0.08),
+            transparent 20%
+          );
+        pointer-events: none;
+      }
+      .wellness-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: clamp(28px, 4vw, 52px);
+        align-items: center;
+      }
+      .wellness-copy {
+        position: relative;
+        z-index: 1;
+      }
+      .wellness-copy h1 {
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-size: clamp(2.8rem, 5vw, 4.8rem);
+        line-height: 1.02;
+        margin: 0;
+      }
+      .wellness-copy p {
+        max-width: 34rem;
+        margin: 24px 0 32px;
+        color: var(--ink-2);
+        line-height: 1.85;
+      }
+      .wellness-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .wellness-actions .btn.ghost {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(228, 116, 91, 0.2);
+        color: var(--ink);
+      }
+      .wellness-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--ink);
+        font-size: 0.95rem;
+        font-weight: 600;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid rgba(255, 255, 255, 0.85);
+      }
+      .wellness-visual {
+        display: grid;
+        gap: 20px;
+        position: relative;
+      }
+      .wellness-visual-card {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        max-width: 460px;
+        margin: 0 auto;
+      }
+      .wellness-visual-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 320px;
+        object-fit: cover;
+      }
+      .service-flow .info-card img {
+        width: 100%;
+        height: auto;
+        max-height: 220px;
+        object-fit: cover;
+        border-radius: 18px;
+      }
+      .service-flow .info-card {
+        padding: 22px 18px;
+      }
+      .wellness-float-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .glass-card {
+        padding: 26px 24px;
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        box-shadow: var(--shadow-sm);
+        backdrop-filter: blur(12px);
+      }
+      .glass-card h3 {
+        margin: 0 0 10px;
+        font-family: var(--font-serif);
+        font-size: 1.1rem;
+      }
+      .glass-card p {
+        margin: 0;
+        color: var(--ink-2);
+        line-height: 1.8;
+      }
+      .wellness-trust {
+        padding-top: 10px;
+      }
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .trust-card {
+        min-height: 124px;
+        padding: 26px 22px;
+        background: #fff;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-sm);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        font-weight: 600;
+        color: var(--ink-2);
+        line-height: 1.4;
+      }
+      .wellness-about {
+        padding-top: 12px;
+      }
+      .two-col-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 34px;
+        align-items: start;
+      }
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 28px 0 0;
+        display: grid;
+        gap: 14px;
+      }
+      .feature-list li {
+        padding-left: 26px;
+        color: var(--ink-2);
+        line-height: 1.8;
+        position: relative;
+      }
+      .feature-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--coral);
+        font-weight: 700;
+      }
+      .feature-panel {
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, var(--pink-bg), var(--pink-bg-2));
+        box-shadow: var(--shadow-sm);
+        padding: 32px;
+      }
+      .panel-copy h3 {
+        font-family: var(--font-serif);
+        margin: 0 0 16px;
+      }
+      .panel-copy p {
+        margin: 0;
+        color: var(--ink-2);
+        line-height: 1.8;
+      }
+      .panel-list {
+        margin-top: 22px;
+        display: grid;
+        gap: 14px;
+      }
+      .panel-list div {
+        background: #fff;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        padding: 18px 20px;
+      }
+      .panel-list strong {
+        display: block;
+        margin-bottom: 8px;
+        font-family: var(--font-serif);
+      }
+      .wellness-help {
+        padding-top: 0;
+      }
+      .help-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+      .icon-card {
+        position: relative;
+        padding: 28px 24px;
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--line);
+        transition:
+          transform 0.3s var(--ease),
+          box-shadow 0.3s var(--ease);
+      }
+      .icon-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+      }
+      .icon-card .icon,
+      .service-card .icon,
+      .info-card .icon {
+        display: grid;
+        place-items: center;
+        width: 56px;
+        height: 56px;
+        border-radius: 18px;
+        background: rgba(228, 116, 91, 0.12);
+        color: var(--coral);
+        font-size: 1.35rem;
+        margin-bottom: 18px;
+      }
+      .icon-card .icon i,
+      .service-card .icon i,
+      .info-card .icon i {
+        font-style: normal;
+        /* font-family: inherit; */
+        display: inline-grid;
+        place-items: center;
+        line-height: 1;
+      }
+      /* .icon-card .icon i::before,
+      .service-card .icon i::before,
+      .info-card .icon i::before {
+        content: "✦";
+        font-size: 1.05em;
+      } */
+      .icon-card h3 {
+        margin: 0 0 10px;
+        font-family: var(--font-serif);
+      }
+      .icon-card p {
+        margin: 0;
+        color: var(--ink-2);
+        line-height: 1.75;
+      }
+      .wellness-services {
+        padding-top: 0;
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+      .service-card {
+        padding: 26px 24px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-sm);
+        transition:
+          transform 0.3s var(--ease),
+          box-shadow 0.3s var(--ease);
+      }
+      .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+      }
+      .service-card .icon {
+        display: grid;
+        place-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 16px;
+        background: rgba(244, 192, 171, 0.35);
+        color: var(--coral);
+        font-size: 1.25rem;
+        margin-bottom: 18px;
+      }
+      .service-card h3 {
+        margin: 0 0 10px;
+        font-family: var(--font-serif);
+      }
+      .service-card p {
+        margin: 0;
+        color: var(--ink-2);
+        line-height: 1.75;
+      }
+      .wellness-stats {
+        padding-top: 0;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .stat-card {
+        padding: 32px 26px;
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, #fff, var(--pink-bg));
+        box-shadow: var(--shadow-sm);
+        border: 1px solid rgba(236, 225, 212, 0.9);
+        text-align: center;
+      }
+      .stat-card strong {
+        display: block;
+        font-size: clamp(1.9rem, 3.2vw, 2.4rem);
+        margin-bottom: 12px;
+        color: var(--coral);
+      }
+      .stat-card span {
+        color: var(--ink-2);
+        line-height: 1.6;
+      }
+      .wellness-packages {
+        padding-top: 0;
+      }
+      .package-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+      .package-card {
+        padding: 28px 24px;
+        border-radius: var(--radius);
+        background: #fff;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .package-card .eyebrow {
+        margin-bottom: 8px;
+      }
+      .package-card h3 {
+        font-family: var(--font-serif);
+        margin: 0;
+      }
+      .package-card ul {
+        margin: 0;
+        padding-left: 18px;
+        display: grid;
+        gap: 10px;
+        color: var(--ink-2);
+      }
+      .package-card li {
+        line-height: 1.7;
+      }
+      .package-meta {
+        display: grid;
+        gap: 10px;
+        color: var(--ink-2);
+      }
+      .package-meta span {
+        font-size: 0.95rem;
+      }
+      .package-card .price {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--ink);
+      }
+      .package-card .price span {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: var(--ink-2);
+      }
+      .wellness-timeline {
+        padding-top: 0;
+      }
+      .timeline {
+        display: grid;
+        gap: 16px;
+        padding: 24px;
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid rgba(236, 225, 212, 0.9);
+        box-shadow: var(--shadow-sm);
+        overflow-x: auto;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(180px, 1fr);
+        align-items: center;
+      }
+      .timeline-step {
+        padding: 20px 18px;
+        border-radius: var(--radius);
+        background: #fff;
+        border: 1px solid var(--line);
+        font-family: var(--font-serif);
+        text-align: center;
+        white-space: normal;
+      }
+      .timeline-arrow {
+        font-size: 1.5rem;
+        text-align: center;
+        color: var(--coral);
+      }
+      .wellness-testimonials {
+        padding-top: 0;
+      }
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+      .testimonial-card {
+        border-radius: var(--radius);
+        background: #fff;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-sm);
+        padding: 24px;
+        display: grid;
+        gap: 18px;
+      }
+      .testimonial-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .testimonial-card strong {
+        display: block;
+        font-family: var(--font-serif);
+        margin-bottom: 4px;
+      }
+      .testimonial-card span {
+        display: block;
+        color: var(--ink-2);
+        margin-bottom: 10px;
+      }
+      .testimonial-card p {
+        margin: 0;
+        color: var(--ink-2);
+        line-height: 1.85;
+      }
+      .wellness-faq {
+        padding-top: 0;
+      }
+      .faq-list {
+        display: grid;
+        gap: 12px;
+      }
+      .faq-item {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 22px;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        background: #fff;
+        cursor: pointer;
+        transition:
+          background 0.25s var(--ease),
+          transform 0.25s var(--ease);
+      }
+      .faq-item:hover {
+        transform: translateY(-1px);
+        background: rgba(251, 234, 217, 0.5);
+      }
+      .faq-item .caret {
+        font-size: 1.2rem;
+        color: var(--coral);
+        transition: transform 0.25s var(--ease);
+      }
+      .faq-item[aria-expanded="true"] .caret {
+        transform: rotate(45deg);
+      }
+      .faq-panel {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition:
+          max-height 0.35s var(--ease),
+          opacity 0.35s var(--ease),
+          padding 0.35s var(--ease);
+        padding: 0 22px;
+      }
+      .faq-item[aria-expanded="true"] + .faq-panel {
+        max-height: 320px;
+        opacity: 1;
+        padding: 18px 22px 20px;
+      }
+      .faq-panel p {
+        margin: 0;
+        color: var(--ink-2);
+        line-height: 1.8;
+      }
+      .wellness-cta-panel {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 24px;
+        align-items: center;
+        padding: clamp(40px, 5vw, 60px);
+        border-radius: var(--radius);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.95),
+          rgba(251, 234, 217, 0.95)
+        );
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-sm);
+      }
+      .wellness-cta-panel h2 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+      .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      @media (max-width: 1080px) {
+        .wellness-hero-grid,
+        .two-col-grid,
+        .help-grid,
+        .services-grid,
+        .stats-grid,
+        .package-grid,
+        .testimonial-grid,
+        .wellness-cta-panel {
+          grid-template-columns: 1fr;
+        }
+        .wellness-float-grid {
+          grid-template-columns: 1fr;
+        }
+        .wellness-actions {
+          justify-content: stretch;
+        }
+        .wellness-actions .btn {
+          flex: 1;
+        }
+      }
+      @media (max-width: 760px) {
+        .wellness-hero {
+          padding-top: 86px;
+        }
+        .wellness-copy h1 {
+          font-size: clamp(2.3rem, 10vw, 3.4rem);
+        }
+        .timeline {
+          grid-auto-flow: row;
+        }
+        .timeline-step {
+          min-width: 0;
+        }
       }
 
       /* ==========================================================================
@@ -2724,7 +3307,9 @@
         border-radius: 26px;
         background: #fff;
         box-shadow: var(--shadow-sm);
-        transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease);
+        transition:
+          transform 0.28s var(--ease),
+          box-shadow 0.28s var(--ease);
       }
       .mayapur-feature:hover {
         transform: translateY(-3px);
@@ -2774,7 +3359,9 @@
         font-weight: 600;
         font-size: 0.95rem;
         letter-spacing: 0.01em;
-        transition: color 0.22s ease, transform 0.22s ease;
+        transition:
+          color 0.22s ease,
+          transform 0.22s ease;
       }
       .mayapur-actions .link-arrow:hover {
         color: var(--coral);
@@ -2787,7 +3374,9 @@
         border-radius: 32px;
         overflow: hidden;
         box-shadow: var(--shadow-lg);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
       }
       .mayapur-hero:hover {
         transform: translateY(-2px);
@@ -2797,7 +3386,9 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.45s ease, filter 0.3s ease;
+        transition:
+          transform 0.45s ease,
+          filter 0.3s ease;
       }
       .mayapur-hero:hover img {
         transform: scale(1.02);
@@ -2852,7 +3443,10 @@
         color: var(--coral-d);
         cursor: pointer;
         box-shadow: 0 20px 42px rgba(74, 50, 34, 0.2);
-        transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          background 0.3s ease,
+          box-shadow 0.3s ease;
       }
       .hero-play:hover {
         transform: translate(-50%, -50%) scale(1.04);
@@ -2900,7 +3494,9 @@
         aspect-ratio: 1.2;
         border-radius: 24px;
         box-shadow: var(--shadow-sm);
-        transition: transform 0.3s ease, filter 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          filter 0.3s ease;
       }
       .mayapur-gallery .ph:hover {
         transform: translateY(-4px);
@@ -3438,8 +4034,8 @@
           <a href="#experiences">Experiences</a>
           <a href="#packages">Packages</a>
           <a href="#about">About Us</a>
-          <a href="#" class="nav-static">Medical Tourism</a>
-          <a href="#" class="nav-static">Wellness Trip</a>
+          <a href="#medical" data-nav="medical">Medical Tourism</a>
+          <a href="#wellness" data-nav="wellness">Wellness Trip</a>
           <div class="nav-item">
             <button
               type="button"
@@ -3541,8 +4137,8 @@
         <a href="#experiences" data-drawer>Experiences</a>
         <a href="#packages" data-drawer>Packages</a>
         <a href="#about" data-drawer>About Us</a>
-        <a href="#" class="nav-static" data-drawer>Medical Tourism</a>
-        <a href="#" class="nav-static" data-drawer>Wellness Trip</a>
+        <a href="#medical" data-drawer data-nav="medical">Medical Tourism</a>
+        <a href="#wellness" data-drawer data-nav="wellness">Wellness Trip</a>
         <div class="drawer-group">
           <button type="button" class="drawer-toggle" aria-expanded="false">
             Guest House
@@ -4385,6 +4981,1534 @@
       </div>
       <!-- /view-home -->
 
+      <!-- ======================= WELLNESS TRIP VIEW ======================= -->
+      <div class="view" id="view-wellness">
+        <section class="wellness-hero">
+          <div class="wrap wellness-hero-grid">
+            <div class="wellness-copy reveal">
+              <span class="eyebrow">Wellness Travel</span>
+              <h1>Wellness Journeys Designed Around Your Recovery</h1>
+              <p>
+                Helping international patients, senior citizens and families
+                experience safe, stress-free medical travel across India.
+              </p>
+              <div class="wellness-actions">
+                <button class="btn">Book Consultation</button>
+                <button class="btn ghost">Talk to Care Coordinator</button>
+              </div>
+              <div class="wellness-badges">
+                <div class="badge">24/7 Assistance</div>
+                <div class="badge">International Patients</div>
+                <div class="badge">Recovery Friendly Stay</div>
+                <div class="badge">Airport Pickup</div>
+              </div>
+            </div>
+            <div class="wellness-visual reveal" data-delay="1">
+              <div class="wellness-visual-card">
+                <img
+                  src="assets/images/traveler-2.png"
+                  alt="Healthcare companion supporting an elderly couple"
+                  loading="lazy"
+                />
+              </div>
+              <div class="wellness-float-grid">
+                <div class="glass-card reveal" data-delay="2">
+                  <h3>Trusted Care</h3>
+                  <p>Personalized travel guidance and medical support.</p>
+                </div>
+                <div class="glass-card reveal" data-delay="3">
+                  <h3>Dedicated Concierge</h3>
+                  <p>One coordinator for your entire journey.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-trust reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Trusted Support</span>
+                <h2>Medical Wellness Services Crafted for Comfort</h2>
+              </div>
+            </div>
+            <div class="trust-grid">
+              <div class="trust-card">24/7 Medical Assistance</div>
+              <div class="trust-card">Verified Hospitals</div>
+              <div class="trust-card">Dedicated Coordinator</div>
+              <div class="trust-card">International Standards</div>
+              <div class="trust-card">Multilingual Support</div>
+              <div class="trust-card">Airport Pickup</div>
+              <div class="trust-card">Medical Visa Guidance</div>
+              <div class="trust-card">Insurance Assistance</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-about section reveal" data-delay="1">
+          <div class="wrap two-col-grid">
+            <div>
+              <span class="eyebrow">About Wellness Trips</span>
+              <h2>
+                More than medical treatment — a complete recovery journey.
+              </h2>
+              <p>
+                A Wellness Trip combines medical tourism planning, treatment
+                coordination, accommodation and transportation with dedicated
+                post-operative recovery care.
+              </p>
+              <ul class="feature-list">
+                <li>Medical tourism planning with safety-first itineraries</li>
+                <li>Treatment coordination and doctor appointment support</li>
+                <li>Comfortable accommodation and seamless transfers</li>
+                <li>Healthy meals, caregiver support and family assistance</li>
+              </ul>
+            </div>
+            <div class="feature-panel">
+              <div class="panel-copy">
+                <h3>Your recovery is planned every step of the way.</h3>
+                <p>
+                  From pre-arrival guidance to follow-up planning, we ensure the
+                  entire stay is calm, secure and deeply supportive.
+                </p>
+              </div>
+              <div class="panel-list">
+                <div>
+                  <strong>Doctor Appointments</strong>
+                  <span>Scheduling appointments with top specialists.</span>
+                </div>
+                <div>
+                  <strong>Rehabilitation Planning</strong>
+                  <span>Custom recovery plans for mobility and comfort.</span>
+                </div>
+                <div>
+                  <strong>Family Support</strong>
+                  <span
+                    >Personal caregivers, translators and compassionate
+                    help.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-help section reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Who We Help</span>
+                <h2>Care designed for every medical traveler.</h2>
+              </div>
+            </div>
+            <div class="help-grid">
+              <article class="icon-card reveal">
+                <span class="icon">👵</span>
+                <h3>Senior Citizens</h3>
+                <p>
+                  Safe, comfortable journeys for mature travelers and families.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon">🩺</span>
+                <h3>Post Operative Recovery</h3>
+                <p>
+                  Restorative care with therapy, meals and daily monitoring.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon">🦴</span>
+                <h3>Joint Replacement Patients</h3>
+                <p>
+                  Specialized mobility assistance and recovery-friendly stays.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon">❤️</span>
+                <h3>Cardiac Recovery</h3>
+                <p>
+                  Heart-safe journeys planned with doctors and nursing support.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon">🎗️</span>
+                <h3>Cancer Care Support</h3>
+                <p>
+                  Comfort, coordination and gentle support for patients and
+                  families.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon">🧠</span>
+                <h3>Neurological Rehabilitation</h3>
+                <p>
+                  Careful recovery plans for brain, nerve and movement therapy.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon">🏥</span>
+                <h3>Orthopedic Rehabilitation</h3>
+                <p>
+                  Expert therapy, walking assistance and adaptive transport.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon">🌿</span>
+                <h3>Women Wellness Programs</h3>
+                <p>
+                  Holistic programs for women’s health, recovery and serenity.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon">💊</span>
+                <h3>Chronic Disease Management</h3>
+                <p>
+                  Ongoing support for diabetes, wellness and long-term care.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon">🌍</span>
+                <h3>International Medical Travelers</h3>
+                <p>Clear guidance from visa to arrival to after-care.</p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon">👨‍👩‍👧</span>
+                <h3>Family Care Assistance</h3>
+                <p>Rooming options and dedicated services for companions.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-services section reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Our Services</span>
+                <h2>Premium support across every part of your journey.</h2>
+              </div>
+            </div>
+            <div class="services-grid">
+              <article class="service-card reveal">
+                <span class="icon">✈️</span>
+                <h3>Airport Assistance</h3>
+                <p>
+                  Fast track arrivals, medical escorts and comfortable
+                  transfers.
+                </p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🛂</span>
+                <h3>Medical Visa Support</h3>
+                <p>
+                  Visa guidance and documentation for international patients.
+                </p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🏨</span>
+                <h3>Hospital Coordination</h3>
+                <p>
+                  Partnered hospitals with trusted admission and care teams.
+                </p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">📅</span>
+                <h3>Doctor Appointments</h3>
+                <p>Appointments booked with specialists, on your schedule.</p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🩹</span>
+                <h3>Nursing Care</h3>
+                <p>
+                  Qualified nurses for post-operative monitoring and assistance.
+                </p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🤝</span>
+                <h3>Personal Attendants</h3>
+                <p>Companion support for daily needs and comfort.</p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🦽</span>
+                <h3>Wheelchair Assistance</h3>
+                <p>Mobility support at airports, hospitals and resorts.</p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🧘</span>
+                <h3>Rehabilitation Planning</h3>
+                <p>Recovery plans with physiotherapy and supportive care.</p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🌿</span>
+                <h3>Wellness Resorts</h3>
+                <p>Quiet healing stays in peaceful, premium resorts.</p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🧘‍♀️</span>
+                <h3>Ayurveda & Yoga Recovery</h3>
+                <p>Holistic recovery rituals rooted in Indian wellness.</p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🥗</span>
+                <h3>Diet Consultation</h3>
+                <p>Nutritional support for better recovery and energy.</p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">💊</span>
+                <h3>Medicine Management</h3>
+                <p>Medication reminders and pharmacy delivery support.</p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🚑</span>
+                <h3>Emergency Support</h3>
+                <p>Prepared, reliable emergency care when it matters most.</p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🏠</span>
+                <h3>Accommodation Booking</h3>
+                <p>
+                  Recovery-friendly stays close to hospitals and wellness
+                  centres.
+                </p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🚗</span>
+                <h3>Transportation</h3>
+                <p>Comfortable transfers with health-conscious vehicles.</p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🗣️</span>
+                <h3>Interpreter Services</h3>
+                <p>
+                  Language support for smooth appointments and conversations.
+                </p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">📄</span>
+                <h3>Medical Documentation</h3>
+                <p>Complete record-keeping for treatment and travel needs.</p>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon">🛡️</span>
+                <h3>Insurance Coordination</h3>
+                <p>Assistance working with insurers for peace of mind.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-stats section reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Why Choose India</span>
+                <h2>World-class care with a warm, affordable welcome.</h2>
+              </div>
+            </div>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <strong>120+</strong><span>World Class Hospitals</span>
+              </div>
+              <div class="stat-card">
+                <strong>15k</strong><span>Experienced Doctors</span>
+              </div>
+              <div class="stat-card">
+                <strong>45%</strong><span>Affordable Treatment</span>
+              </div>
+              <div class="stat-card">
+                <strong>1700+</strong><span>AYUSH Wellness Centers</span>
+              </div>
+              <div class="stat-card">
+                <strong>Yoga</strong><span>Daily recovery therapies</span>
+              </div>
+              <div class="stat-card">
+                <strong>Ayurveda</strong
+                ><span>Traditional healing programs</span>
+              </div>
+              <div class="stat-card">
+                <strong>24/7</strong><span>English Speaking Staff</span>
+              </div>
+              <div class="stat-card">
+                <strong>98%</strong><span>High Success Rates</span>
+              </div>
+              <div class="stat-card">
+                <strong>Accredited</strong
+                ><span>International Certification</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-packages section reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Wellness Packages</span>
+                <h2>Luxury recovery packages for every need.</h2>
+              </div>
+            </div>
+            <div class="package-grid">
+              <article class="package-card reveal">
+                <span class="eyebrow">Senior Wellness Stay</span>
+                <h3>7 Days · Ideal for Seniors</h3>
+                <ul>
+                  <li>Comfort suite accommodation</li>
+                  <li>Daily doctor review</li>
+                  <li>Diet, transport & caregiver support</li>
+                </ul>
+                <div class="package-meta">
+                  <span>Meals included</span><span>Airport transfer</span>
+                </div>
+                <div class="price">₹39,999<span>Per Person</span></div>
+                <button class="btn">Book Consultation</button>
+              </article>
+              <article class="package-card reveal">
+                <span class="eyebrow">Post Surgery Recovery</span>
+                <h3>10 Days · Ideal for Surgery Patients</h3>
+                <ul>
+                  <li>Private recovery suite</li>
+                  <li>Physiotherapy sessions</li>
+                  <li>24/7 nursing care</li>
+                </ul>
+                <div class="package-meta">
+                  <span>Daily health checks</span><span>Packed meals</span>
+                </div>
+                <div class="price">₹54,999<span>Per Person</span></div>
+                <button class="btn">Book Consultation</button>
+              </article>
+              <article class="package-card reveal">
+                <span class="eyebrow">Holistic Healing Retreat</span>
+                <h3>12 Days · Ideal for Wellness Seekers</h3>
+                <ul>
+                  <li>Ayurveda and yoga recovery</li>
+                  <li>Mindful meals and therapies</li>
+                  <li>Resort stay with doctor support</li>
+                </ul>
+                <div class="package-meta">
+                  <span>Wellness rituals</span><span>Transport included</span>
+                </div>
+                <div class="price">₹62,999<span>Per Person</span></div>
+                <button class="btn">Book Consultation</button>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-timeline section reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Recovery Journey</span>
+                <h2>Your seamless wellness timeline.</h2>
+              </div>
+            </div>
+            <div class="timeline">
+              <div class="timeline-step reveal"><span>Consultation</span></div>
+              <div class="timeline-arrow">↓</div>
+              <div class="timeline-step reveal">
+                <span>Travel Planning</span>
+              </div>
+              <div class="timeline-arrow">↓</div>
+              <div class="timeline-step reveal"><span>Arrival</span></div>
+              <div class="timeline-arrow">↓</div>
+              <div class="timeline-step reveal"><span>Treatment</span></div>
+              <div class="timeline-arrow">↓</div>
+              <div class="timeline-step reveal"><span>Recovery</span></div>
+              <div class="timeline-arrow">↓</div>
+              <div class="timeline-step reveal">
+                <span>Wellness Program</span>
+              </div>
+              <div class="timeline-arrow">↓</div>
+              <div class="timeline-step reveal"><span>Follow Up</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-testimonials section reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Patient Testimonials</span>
+                <h2>Stories of calm recovery and care.</h2>
+              </div>
+            </div>
+            <div class="testimonial-grid">
+              <article class="testimonial-card reveal">
+                <img
+                  src="assets/images/traveler-1.png"
+                  alt="Patient from UK"
+                  loading="lazy"
+                />
+                <div>
+                  <strong>Emma, UK</strong>
+                  <span>Joint replacement recovery</span>
+                  <p>
+                    “The staff made every appointment effortless and
+                    comforting.”
+                  </p>
+                </div>
+              </article>
+              <article class="testimonial-card reveal">
+                <img
+                  src="assets/images/traveler-3.jpg"
+                  alt="Patient from Australia"
+                  loading="lazy"
+                />
+                <div>
+                  <strong>Lucas, Australia</strong>
+                  <span>Cardiac recovery</span>
+                  <p>
+                    “Recovery felt like a premium retreat with expert medical
+                    care.”
+                  </p>
+                </div>
+              </article>
+              <article class="testimonial-card reveal">
+                <img
+                  src="assets/images/traveler-2.png"
+                  alt="Patient from USA"
+                  loading="lazy"
+                />
+                <div>
+                  <strong>Sophia, USA</strong>
+                  <span>International patient support</span>
+                  <p>
+                    “Everything from visa help to translator services was
+                    seamless.”
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-faq section reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">FAQ</span>
+                <h2>Questions patients ask most often.</h2>
+              </div>
+            </div>
+            <div class="faq-list">
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>How do I obtain a Medical Visa?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                We assist with visa documents and application guidance for
+                medical travel.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>Do you arrange airport pickup?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                Yes, our team provides personalised pickup and assistance at
+                arrival.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>Can family stay together?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                Family-friendly accommodation can be arranged based on your
+                package.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>Do you provide translators?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                Multilingual support is available throughout the journey.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>How long should recovery stay be?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                Stay length varies by treatment; our coordinators tailor it to
+                your needs.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>Can I book online?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                Yes, consultations and bookings can be arranged online with
+                expert support.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>What hospitals do you partner with?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                We partner with accredited hospitals and wellness centres across
+                India.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>What payment methods are accepted?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                We accept international bank transfers, cards, and secure online
+                payments.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-cta section reveal" data-delay="1">
+          <div class="wrap wellness-cta-panel">
+            <div>
+              <span class="eyebrow">Begin Your Wellness Journey Today</span>
+              <h2>
+                Medical care and hospitality designed for peace and recovery.
+              </h2>
+            </div>
+            <div class="cta-actions">
+              <button class="btn">Book Consultation</button>
+              <button class="btn ghost">Speak to Coordinator</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="view" id="view-medical">
+        <section class="wellness-hero">
+          <div class="wrap wellness-hero-grid">
+            <div class="wellness-copy reveal">
+              <span class="eyebrow">Medical Tourism</span>
+              <h1>Complete Medical Tourism Services in India</h1>
+              <p>
+                Helping international patients travel safely for world-class
+                healthcare with complete medical travel coordination from
+                arrival to recovery.
+              </p>
+              <div class="wellness-actions">
+                <button class="btn">Book Consultation</button>
+                <button class="btn ghost">Talk to Medical Coordinator</button>
+              </div>
+              <div class="wellness-badges">
+                <div class="badge">International Patients</div>
+                <div class="badge">Visa Assistance</div>
+                <div class="badge">Hospital Coordination</div>
+                <div class="badge">24×7 Support</div>
+                <div class="badge">Medical Documentation</div>
+                <div class="badge">Airport Pickup</div>
+              </div>
+            </div>
+            <div class="wellness-visual reveal" data-delay="1">
+              <div class="wellness-visual-card">
+                <img
+                  src="assets/images/medical-tourism.webp"
+                  alt="Medical Tourism experience"
+                  loading="lazy"
+                />
+              </div>
+              <div class="wellness-float-grid">
+                <div class="glass-card reveal" data-delay="2">
+                  <h3>International Patient Desk</h3>
+                  <p>
+                    Personalised support from arrival through treatment and
+                    return.
+                  </p>
+                </div>
+                <div class="glass-card reveal" data-delay="3">
+                  <h3>Dedicated Medical Coordinator</h3>
+                  <p>
+                    One point of contact for every step of your medical journey.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-trust reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Trusted Support</span>
+                <h2>
+                  Medical Tourism services built for confidence and comfort.
+                </h2>
+              </div>
+            </div>
+            <div class="trust-grid">
+              <div class="trust-card">JCI & NABH Hospitals</div>
+              <div class="trust-card">Dedicated Medical Coordinator</div>
+              <div class="trust-card">Medical Visa Assistance</div>
+              <div class="trust-card">International Patient Desk</div>
+              <div class="trust-card">Multilingual Support</div>
+              <div class="trust-card">Secure Payments</div>
+              <div class="trust-card">Emergency Assistance</div>
+              <div class="trust-card">24×7 Support</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-about section reveal" data-delay="1">
+          <div class="wrap two-col-grid">
+            <div>
+              <span class="eyebrow">About Medical Tourism</span>
+              <h2>
+                Medical care in India with full travel and recovery support.
+              </h2>
+              <p>
+                Medical Tourism means travelling to another country to receive
+                high-quality medical treatment while benefiting from affordable
+                healthcare, experienced specialists and complete travel support.
+              </p>
+              <ul class="feature-list">
+                <li>Affordable treatment with world-renowned specialists</li>
+                <li>Modern hospitals and advanced technology</li>
+                <li>English-speaking medical staff and coordinated care</li>
+                <li>Minimal waiting time and personalised treatment plans</li>
+              </ul>
+            </div>
+            <div class="feature-panel">
+              <div class="panel-copy">
+                <h3>India is a global destination for medical travel.</h3>
+                <p>
+                  Patients choose India for superior clinical expertise,
+                  hotel-style recovery stays and comprehensive support from
+                  arrival to follow-up.
+                </p>
+              </div>
+              <div class="panel-list">
+                <div>
+                  <strong>Affordable treatment</strong>
+                  <span>Premium care without premium pricing.</span>
+                </div>
+                <div>
+                  <strong>Experienced doctors</strong>
+                  <span
+                    >Specialists with international training and outcomes.</span
+                  >
+                </div>
+                <div>
+                  <strong>English-speaking staff</strong>
+                  <span
+                    >Clear communication with doctors, coordinators and
+                    nurses.</span
+                  >
+                </div>
+                <div>
+                  <strong>Advanced technology</strong>
+                  <span>Modern hospitals equipped for complex procedures.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-timeline section reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">How Our Process Works</span>
+                <h2>Every stage of care guided with clarity and trust.</h2>
+              </div>
+            </div>
+            <div class="timeline">
+              <div class="timeline-step reveal">
+                <span>Step 1<br />Medical Inquiry</span>
+              </div>
+              <div class="timeline-arrow">↓</div>
+              <div class="timeline-step reveal">
+                <span>Step 2<br />Doctor Review</span>
+              </div>
+              <div class="timeline-arrow">↓</div>
+              <div class="timeline-step reveal">
+                <span>Step 3<br />Treatment Plan</span>
+              </div>
+              <div class="timeline-arrow">↓</div>
+              <div class="timeline-step reveal">
+                <span>Step 4<br />Visa Assistance</span>
+              </div>
+              <div class="timeline-arrow">↓</div>
+              <div class="timeline-step reveal">
+                <span>Step 5<br />Travel Planning</span>
+              </div>
+              <div class="timeline-arrow">↓</div>
+              <div class="timeline-step reveal">
+                <span>Step 6<br />Arrival in India</span>
+              </div>
+              <div class="timeline-arrow">↓</div>
+              <div class="timeline-step reveal">
+                <span>Step 7<br />Treatment</span>
+              </div>
+              <div class="timeline-arrow">↓</div>
+              <div class="timeline-step reveal">
+                <span>Step 8<br />Follow-Up</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-services section reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Documentation & Visa Support</span>
+                <h2>Guidance through every medical travel document.</h2>
+              </div>
+            </div>
+            <div class="services-grid">
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-passport" aria-hidden="true"></i
+                ></span>
+                <h3>Medical Visa Assistance</h3>
+                <p>
+                  Support with visa invitation letters, embassy guidance and
+                  documentation.
+                </p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-file-medical" aria-hidden="true"></i
+                ></span>
+                <h3>Medical Records Review</h3>
+                <p>
+                  Expert review of reports, scans and doctor referrals before
+                  travel.
+                </p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-notes-medical" aria-hidden="true"></i
+                ></span>
+                <h3>Hospital Appointment Letter</h3>
+                <p>
+                  Fast coordination of specialist appointments and treatment
+                  plans.
+                </p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-id-card" aria-hidden="true"></i
+                ></span>
+                <h3>Passport Verification</h3>
+                <p>
+                  Checklist support for travel documents and secure identity
+                  verification.
+                </p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-hospital" aria-hidden="true"></i
+                ></span>
+                <h3>Hospital Registration</h3>
+                <p>
+                  Pre-arrival registration and admission coordination with top
+                  hospitals.
+                </p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i
+                ></span>
+                <h3>Discharge Documentation</h3>
+                <p>
+                  Complete discharge summaries, follow-up reports and aftercare
+                  plans.
+                </p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i
+                    class="fa-solid fa-briefcase-medical"
+                    aria-hidden="true"
+                  ></i
+                ></span>
+                <h3>Doctor Referral Support</h3>
+                <p>
+                  Organised referrals and diagnostic reports for safe treatment
+                  planning.
+                </p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i
+                    class="fa-solid fa-file-invoice-dollar"
+                    aria-hidden="true"
+                  ></i
+                ></span>
+                <h3>Medical Cost Estimation</h3>
+                <p>Transparent guidance on treatment, stay and travel costs.</p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-language" aria-hidden="true"></i
+                ></span>
+                <h3>Companion Visa Guidance</h3>
+                <p>Information for family travel, stays and companion visas.</p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i
+                    class="fa-solid fa-money-bill-transfer"
+                    aria-hidden="true"
+                  ></i
+                ></span>
+                <h3>International Payment Guidance</h3>
+                <p>
+                  Secure cross-border payment support for international
+                  patients.
+                </p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i
+                    class="fa-solid fa-file-prescription"
+                    aria-hidden="true"
+                  ></i
+                ></span>
+                <h3>Prescription Documents</h3>
+                <p>
+                  Verification and secure transfer of prescriptions for care
+                  abroad.
+                </p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-globe" aria-hidden="true"></i
+                ></span>
+                <h3>Document Translation Support</h3>
+                <p>
+                  Translation for medical reports, consent forms and travel
+                  documents.
+                </p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-file-lines" aria-hidden="true"></i
+                ></span>
+                <h3>Hospital Appointment Letter</h3>
+                <p>
+                  Appointment letters prepared for visa and admission
+                  requirements.
+                </p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+              <article class="service-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-check-to-slot" aria-hidden="true"></i
+                ></span>
+                <h3>Follow-up Reports</h3>
+                <p>
+                  Ongoing documentation and remote consultation after discharge.
+                </p>
+                <button class="btn ghost">Learn More</button>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-about section reveal" data-delay="1">
+          <div class="wrap two-col-grid">
+            <div>
+              <span class="eyebrow">Patients from Bangladesh</span>
+              <h2>Travel from Dhaka to Kolkata with guided medical care.</h2>
+              <p>
+                Patients from Bangladesh commonly travel to India for
+                specialised hospitals, language familiarity and near-border
+                support.
+              </p>
+              <ul class="feature-list">
+                <li>Travel guidance for airport and land-border access</li>
+                <li>Medical visa support and appointment scheduling</li>
+                <li>Interpreter assistance when needed</li>
+                <li>Accommodation and medicine procurement support</li>
+                <li>Post-treatment follow-up and return planning</li>
+              </ul>
+            </div>
+            <div class="panel-copy info-card reveal">
+              <img
+                src="assets/images/bangladesh-to-kolkata.webp"
+                alt="Bangladesh medical tourism"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-about section reveal" data-delay="1">
+          <div class="wrap two-col-grid">
+            <div class="panel-copy info-card reveal">
+              <img
+                src="assets/images/uk-to-india.webp"
+                alt="United Kingdom medical tourism"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <span class="eyebrow">Patients from United Kingdom</span>
+              <h2>UK patients choose India for advanced care and recovery.</h2>
+              <p>
+                Patients from London and the UK travel for orthopedics, cardiac
+                care, oncology, cosmetic surgery and wellness recovery with full
+                coordination.
+              </p>
+              <ul class="feature-list">
+                <li>Lower treatment costs with international quality</li>
+                <li>Experienced specialists and shorter wait times</li>
+                <li>Complete flight, hotel and transfer coordination</li>
+                <li>Recovery planning and online follow-up support</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-help section reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Medical Specialities</span>
+                <h2>Expert treatment categories for international patients.</h2>
+              </div>
+            </div>
+            <div class="help-grid">
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i
+                ></span>
+                <h3>Heart Surgery</h3>
+                <p>
+                  Cardiac care delivered with precision and compassionate
+                  recovery.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-bone" aria-hidden="true"></i
+                ></span>
+                <h3>Orthopedics</h3>
+                <p>
+                  Joint and bone care supported by recovery-focused
+                  coordination.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-brain" aria-hidden="true"></i
+                ></span>
+                <h3>Neurosurgery</h3>
+                <p>
+                  Advanced neurological procedures with world-class specialists.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-ribbon" aria-hidden="true"></i
+                ></span>
+                <h3>Oncology</h3>
+                <p>
+                  Compassionate cancer care backed by expert treatment plans.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-droplet" aria-hidden="true"></i
+                ></span>
+                <h3>Kidney Care</h3>
+                <p>
+                  Nephrology services and transplant support for global
+                  patients.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i
+                    class="fa-solid fa-prescription-bottle-medical"
+                    aria-hidden="true"
+                  ></i
+                ></span>
+                <h3>Liver Care</h3>
+                <p>Comprehensive liver treatment and recovery coordination.</p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-hospital-user" aria-hidden="true"></i
+                ></span>
+                <h3>Organ Transplant Support</h3>
+                <p>
+                  Clinical coordination for transplant preparation and recovery.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-baby-carriage" aria-hidden="true"></i
+                ></span>
+                <h3>IVF &amp; Fertility</h3>
+                <p>Private fertility care with personalised consultations.</p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-face-smile" aria-hidden="true"></i
+                ></span>
+                <h3>Cosmetic Surgery</h3>
+                <p>
+                  Premium aesthetic procedures with thoughtful recovery support.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-tooth" aria-hidden="true"></i
+                ></span>
+                <h3>Dental Care</h3>
+                <p>
+                  International dental treatments with modern clinic standards.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-eye" aria-hidden="true"></i
+                ></span>
+                <h3>Eye Care</h3>
+                <p>
+                  Vision treatments and surgery with world-class ophthalmology.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-ear-listen" aria-hidden="true"></i
+                ></span>
+                <h3>ENT</h3>
+                <p>Head and neck care with comprehensive diagnostic support.</p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-syringe" aria-hidden="true"></i
+                ></span>
+                <h3>Urology</h3>
+                <p>Specialised urological care and follow-up coordination.</p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-stethoscope" aria-hidden="true"></i
+                ></span>
+                <h3>Gastroenterology</h3>
+                <p>Digestive health services with modern clinical support.</p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-child" aria-hidden="true"></i
+                ></span>
+                <h3>Pediatrics</h3>
+                <p>
+                  Child-friendly medical care for young patients and families.
+                </p>
+              </article>
+              <article class="icon-card reveal">
+                <span class="icon"
+                  ><i
+                    class="fa-solid fa-briefcase-medical"
+                    aria-hidden="true"
+                  ></i
+                ></span>
+                <h3>General Surgery</h3>
+                <p>
+                  Trusted surgical care with smooth admission and recovery
+                  support.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-services section reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">International Patient Services</span>
+                <h2>Every part of your stay supported with care.</h2>
+              </div>
+            </div>
+            <div class="service-flow two-col-grid">
+              <div class="info-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-plane" aria-hidden="true"></i
+                ></span>
+                <h3>Airport Pickup</h3>
+                <p>
+                  Meet and greet service with medical escorts and luggage
+                  assistance.
+                </p>
+              </div>
+              <div class="info-card reveal">
+                <img
+                  src="assets/images/airport-pickup.png"
+                  alt="Airport pickup"
+                  loading="lazy"
+                />
+              </div>
+              <div class="info-card reveal">
+                <img
+                  src="assets/images/hotel-booking.webp"
+                  alt="Hotel booking"
+                  loading="lazy"
+                />
+              </div>
+              <div class="info-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-bed" aria-hidden="true"></i
+                ></span>
+                <h3>Hotel Booking</h3>
+                <p>
+                  Comfortable stays close to hospitals and recovery centers.
+                </p>
+              </div>
+              <div class="info-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-house-medical" aria-hidden="true"></i
+                ></span>
+                <h3>Guest House Arrangement</h3>
+                <p>
+                  Private recovery accommodations with family-friendly
+                  amenities.
+                </p>
+              </div>
+              <div class="info-card reveal">
+                <img
+                  src="assets/images/guest-house-arrangement.webp"
+                  alt="Guest house arrangement"
+                  loading="lazy"
+                />
+              </div>
+              <div class="info-card reveal">
+                <img
+                  src="assets/images/hospital-admission.webp"
+                  alt="Hospital admission"
+                  loading="lazy"
+                />
+              </div>
+              <div class="info-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-user-doctor" aria-hidden="true"></i
+                ></span>
+                <h3>Hospital Admission</h3>
+                <p>
+                  Smooth admission support and hospital transfer coordination.
+                </p>
+              </div>
+              <div class="info-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-headset" aria-hidden="true"></i
+                ></span>
+                <h3>Personal Care Coordinator</h3>
+                <p>
+                  A dedicated coordinator keeps your entire medical journey calm
+                  and organized.
+                </p>
+              </div>
+              <div class="info-card reveal">
+                <img
+                  src="assets/images/personal-care-coordinator.webp"
+                  alt="Personal care coordinator"
+                  loading="lazy"
+                />
+              </div>
+              <div class="info-card reveal">
+                <img
+                  src="assets/images/interpreter.webp"
+                  alt="Interpreter assistance"
+                  loading="lazy"
+                />
+              </div>
+              <div class="info-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-language" aria-hidden="true"></i
+                ></span>
+                <h3>Interpreter</h3>
+                <p>
+                  Multilingual support so medical conversations are clear and
+                  comfortable.
+                </p>
+              </div>
+              <div class="info-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i
+                ></span>
+                <h3>Currency Assistance</h3>
+                <p>
+                  Guidance on international payments and secure currency
+                  transfer.
+                </p>
+              </div>
+              <div class="info-card reveal">
+                <img
+                  src="assets/images/currency-assistance.webp"
+                  alt="Currency assistance"
+                  loading="lazy"
+                />
+              </div>
+              <div class="info-card reveal">
+                <img
+                  src="assets/images/sim-card-assistance.webp"
+                  alt="SIM card assistance"
+                  loading="lazy"
+                />
+              </div>
+              <div class="info-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-sim-card" aria-hidden="true"></i
+                ></span>
+                <h3>SIM Card Assistance</h3>
+                <p>Local connectivity support for patients and companions.</p>
+              </div>
+              <div class="info-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-car" aria-hidden="true"></i
+                ></span>
+                <h3>Local Transportation</h3>
+                <p>
+                  Comfortable transport between hospitals, hotels and
+                  appointments.
+                </p>
+              </div>
+              <div class="info-card reveal">
+                <img
+                  src="assets/images/local-transportation.webp"
+                  alt="Local transportation"
+                  loading="lazy"
+                />
+              </div>
+              <div class="info-card reveal">
+                <img
+                  src="assets/images/wheel-chair-asistance.webp"
+                  alt="whellchair assistance support"
+                  loading="lazy"
+                />
+              </div>
+              <div class="info-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-wheelchair" aria-hidden="true"></i
+                ></span>
+                <h3>Wheelchair Assistance</h3>
+                <p>
+                  Mobility support from arrival through recovery and departure.
+                </p>
+              </div>
+              <div class="info-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-bed-pulse" aria-hidden="true"></i
+                ></span>
+                <h3>Nursing Care</h3>
+                <p>
+                  Qualified nursing assistance to ensure comfort and safety.
+                </p>
+              </div>
+              <div class="info-card reveal">
+                <img
+                  src="assets/images/nursing-care.webp"
+                  alt="Nursing care"
+                  loading="lazy"
+                />
+              </div>
+              <div class="info-card reveal">
+                <img
+                  src="assets/images/medicine-delivery.webp"
+                  alt="Medicine delivery"
+                  loading="lazy"
+                />
+              </div>
+              <div class="info-card reveal">
+                <span class="icon"
+                  ><i class="fa-solid fa-pills" aria-hidden="true"></i
+                ></span>
+                <h3>Medicine Delivery</h3>
+                <p>
+                  Medicine procurement and delivery support for smoother
+                  recovery.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-trust reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Cost Advantage</span>
+                <h2>Premium international care with a more affordable edge.</h2>
+              </div>
+            </div>
+            <div class="trust-grid">
+              <div class="trust-card">
+                India — Advanced care, affordable options.
+              </div>
+              <div class="trust-card">
+                International quality, minimal waiting time.
+              </div>
+              <div class="trust-card">
+                Treatment choice across multiple specialties.
+              </div>
+              <div class="trust-card">
+                Expert support from arrival to recovery.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-stats section reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Why Choose Us</span>
+                <h2>
+                  Trusted medical tourism specialists for international
+                  patients.
+                </h2>
+              </div>
+            </div>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <strong>950+</strong
+                ><span>International Patients Assisted</span>
+              </div>
+              <div class="stat-card">
+                <strong>40+</strong><span>Partner Hospitals</span>
+              </div>
+              <div class="stat-card">
+                <strong>30</strong><span>Treatment Categories</span>
+              </div>
+              <div class="stat-card">
+                <strong>25</strong><span>Countries Served</span>
+              </div>
+              <div class="stat-card">
+                <strong>24×7</strong><span>Assistance</span>
+              </div>
+              <div class="stat-card">
+                <strong>Dedicated</strong><span>Coordinators</span>
+              </div>
+              <div class="stat-card">
+                <strong>98%</strong><span>Patient Satisfaction</span>
+              </div>
+              <div class="stat-card">
+                <strong>15</strong><span>Years of Experience</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-faq section reveal" data-delay="1">
+          <div class="wrap">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">FAQ</span>
+                <h2>Questions patients ask most often.</h2>
+              </div>
+            </div>
+            <div class="faq-list">
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>How do I obtain a Medical Visa?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                We assist with visa documents and application guidance for
+                medical travel.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>Can someone accompany me?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                A companion can be arranged with visa guidance and support for
+                their stay.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>How do I send medical reports?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                Send reports securely through our patient concierge before your
+                arrival.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>Can you arrange airport pickup?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                Yes, our team provides personalised pickup and assistance at
+                arrival.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>Do you help with hotels?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                We book hotel or guest house accommodations close to hospitals.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>How long does treatment planning take?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                Treatment planning is typically completed in a few business days
+                after document review.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>Do you provide translators?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                Yes, multilingual translators are available throughout your
+                stay.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>How are payments handled?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                Secure international payments and local settlement support are
+                available.
+              </div>
+              <button class="faq-item" type="button" aria-expanded="false">
+                <span>Can follow-up consultations be online?</span>
+                <span class="caret">+</span>
+              </button>
+              <div class="faq-panel">
+                Yes, online follow-up consultations are offered after discharge.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wellness-cta section reveal" data-delay="1">
+          <div class="wrap wellness-cta-panel">
+            <div>
+              <span class="eyebrow"
+                >Start Your Medical Journey with Confidence</span
+              >
+              <h2>
+                Medical care and hospitality designed for peace and recovery.
+              </h2>
+            </div>
+            <div class="cta-actions">
+              <button class="btn">Book Medical Consultation</button>
+              <button class="btn ghost">Speak to Patient Coordinator</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
       <!-- ======================= DESTINATIONS VIEW (mobile app screen) ======================= -->
       <div class="view" id="view-destinations">
         <div class="wrap subpage">
@@ -4503,36 +6627,48 @@
               <span class="eyebrow">Guest House · Mayapur</span>
               <h2>A Peaceful Stay in the Holy Town of Mayapur</h2>
               <p>
-                Comfortable rooms minutes from the ISKCON temple — a calm base for
-                pilgrimage, wellness, and medical-tourism stays.
+                Comfortable rooms minutes from the ISKCON temple — a calm base
+                for pilgrimage, wellness, and medical-tourism stays.
               </p>
               <div class="mayapur-feature-grid">
                 <div class="mayapur-feature">
                   <span class="chip">1</span>
                   <div>
                     <strong>Sanctuary Rooms</strong>
-                    <span>Elegantly appointed suites with local textures and serene views.</span>
+                    <span
+                      >Elegantly appointed suites with local textures and serene
+                      views.</span
+                    >
                   </div>
                 </div>
                 <div class="mayapur-feature">
                   <span class="chip">2</span>
                   <div>
                     <strong>Curated Wellness</strong>
-                    <span>Daily meditation rituals, nourishing meals, and restorative rest.</span>
+                    <span
+                      >Daily meditation rituals, nourishing meals, and
+                      restorative rest.</span
+                    >
                   </div>
                 </div>
                 <div class="mayapur-feature">
                   <span class="chip">3</span>
                   <div>
                     <strong>Temple Proximity</strong>
-                    <span>Just minutes from ISKCON and the sacred ghats for peaceful pilgrimage.</span>
+                    <span
+                      >Just minutes from ISKCON and the sacred ghats for
+                      peaceful pilgrimage.</span
+                    >
                   </div>
                 </div>
                 <div class="mayapur-feature">
                   <span class="chip">4</span>
                   <div>
                     <strong>Personalized Service</strong>
-                    <span>Tailored guest experiences for travelers seeking premium calm.</span>
+                    <span
+                      >Tailored guest experiences for travelers seeking premium
+                      calm.</span
+                    >
                   </div>
                 </div>
               </div>
@@ -4540,7 +6676,15 @@
                 <button class="btn">Book Your Stay</button>
                 <a class="link-arrow" href="#mayapur-gallery">
                   View Gallery
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
                     <path d="M5 12h14"></path>
                     <path d="m13 6 6 6-6 6"></path>
                   </svg>
@@ -4555,7 +6699,9 @@
                 referrerpolicy="no-referrer"
                 loading="lazy"
               />
-              <div class="mayapur-hero-badge"><span></span>Mayapur Guest House</div>
+              <div class="mayapur-hero-badge">
+                <span></span>Mayapur Guest House
+              </div>
               <button
                 class="hero-play"
                 id="mayapurTourBtn"
@@ -5918,6 +8064,8 @@
         destinations: "view-destinations",
         detail: "view-detail",
         mayapur: "view-mayapur",
+        wellness: "view-wellness",
+        medical: "view-medical",
       };
       // Transparent header only makes sense while the hero banner is
       // actually on screen — i.e. the home view is active and no single
@@ -5931,7 +8079,8 @@
           isHome && !document.body.classList.contains("solo-section"),
         );
       }
-      function go(name, scroll = true) {
+      function go(name, scroll = true, updateHash = true) {
+        if (!views[name]) return;
         document.body.classList.remove("solo-section");
         Object.values(views).forEach((id) =>
           document.getElementById(id).classList.remove("active"),
@@ -5951,13 +8100,29 @@
         }[name];
         if (bn) document.getElementById(bn).classList.add("active");
         // keep header nav in sync no matter how we got here
-        const navHref = { home: "#", destinations: "#destinations" }[name];
+        const navHref = {
+          home: "#",
+          destinations: "#destinations",
+          wellness: "#wellness",
+          medical: "#medical",
+        }[name];
         if (navHref) setNavActive(navHref);
         else if (name === "mayapur") {
           setActiveNavLabel(document.querySelector(".nav-item .nav-parent"));
           document
             .querySelectorAll('.nav-dropdown a[data-nav="mayapur"]')
             .forEach((a) => a.classList.add("active"));
+        }
+        if (updateHash) {
+          const routeHash = {
+            home: "#",
+            destinations: "#destinations",
+            wellness: "#wellness",
+            medical: "#medical",
+            mayapur: "#mayapur",
+          }[name];
+          if (routeHash && routeHash !== location.hash)
+            history.pushState(null, "", routeHash);
         }
         if (scroll) window.scrollTo({ top: 0, behavior: "auto" });
       }
@@ -6247,6 +8412,14 @@
             openHome();
             return;
           }
+          if (href === "#wellness") {
+            go("wellness");
+            return;
+          }
+          if (href === "#medical") {
+            go("medical");
+            return;
+          }
           if (href && href.startsWith("#") && href.length > 1) {
             openPage(href.slice(1));
           }
@@ -6258,6 +8431,48 @@
         a.addEventListener("click", () => {
           a.blur();
           a.closest(".nav-item")?.classList.remove("open");
+        });
+      });
+
+      function routeFromHash() {
+        const hash = location.hash || "#";
+        if (hash === "#medical") {
+          go("medical", true, false);
+          return;
+        }
+        if (hash === "#wellness") {
+          go("wellness", true, false);
+          return;
+        }
+        if (hash === "#destinations") {
+          go("destinations", true, false);
+          return;
+        }
+        if (hash === "#mayapur") {
+          go("mayapur", true, false);
+          return;
+        }
+        if (hash === "#" || hash === "") {
+          go("home", true, false);
+          return;
+        }
+        const name = hash.slice(1);
+        if (
+          ["experiences", "packages", "about", "stories", "contact"].includes(
+            name,
+          )
+        ) {
+          openPage(name);
+        }
+      }
+      window.addEventListener("hashchange", routeFromHash);
+      routeFromHash();
+
+      /* Wellness FAQ accordion */
+      document.querySelectorAll(".faq-item").forEach((button) => {
+        button.addEventListener("click", () => {
+          const expanded = button.getAttribute("aria-expanded") === "true";
+          button.setAttribute("aria-expanded", expanded ? "false" : "true");
         });
       });
 
