@@ -1263,10 +1263,19 @@
         display: grid;
         place-items: center;
         text-align: center;
+        justify-content: center;
         font-weight: 600;
         color: var(--ink-2);
         line-height: 1.4;
+
+        font-size: 12px;
+
+
+        overflow: hidden;
       }
+
+      
+
       .wellness-about {
         padding-top: 12px;
       }
@@ -5006,7 +5015,7 @@
             <div class="wellness-visual reveal" data-delay="1">
               <div class="wellness-visual-card">
                 <img
-                  src="assets/images/traveler-2.png"
+                  src="assets/images/nursing-care.webp"
                   alt="Healthcare companion supporting an elderly couple"
                   loading="lazy"
                 />
@@ -5034,14 +5043,14 @@
               </div>
             </div>
             <div class="trust-grid">
-              <div class="trust-card">24/7 Medical Assistance</div>
-              <div class="trust-card">Verified Hospitals</div>
-              <div class="trust-card">Dedicated Coordinator</div>
-              <div class="trust-card">International Standards</div>
-              <div class="trust-card">Multilingual Support</div>
-              <div class="trust-card">Airport Pickup</div>
-              <div class="trust-card">Medical Visa Guidance</div>
-              <div class="trust-card">Insurance Assistance</div>
+              <div class="trust-card"><p class="trust-card-tex">/7 Medical Assistance</p></div>
+              <div class="trust-card"><p class="trust-card-tex">Verified Hospitals</p></div>
+              <div class="trust-card"><p class="trust-card-tex">Dedicated Coordinator</p></div>
+              <div class="trust-card"><p class="trust-card-tex">International Standards</p></div>
+              <div class="trust-card"><p class="trust-card-tex">Multilingual Support</p></div>
+              <div class="trust-card"><p class="trust-card-tex">Airport Pickup</p></div>
+              <div class="trust-card"><p class="trust-card-tex">Medical Visa Guidance</p></div>
+              <div class="trust-card"><p class="trust-card-tex">Insurance Assistance</p></div>
             </div>
           </div>
         </section>
@@ -5104,35 +5113,35 @@
             </div>
             <div class="help-grid">
               <article class="icon-card reveal">
-                <span class="icon">👵</span>
+                <span class="icon"><i class="fa-solid fa-person-cane"></i></span>
                 <h3>Senior Citizens</h3>
                 <p>
                   Safe, comfortable journeys for mature travelers and families.
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon">🩺</span>
+                <span class="icon"><i class="fa-solid fa-stethoscope"></i></span>
                 <h3>Post Operative Recovery</h3>
                 <p>
                   Restorative care with therapy, meals and daily monitoring.
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon">🦴</span>
+                <span class="icon"><i class="fa-solid fa-bone"></i></span>
                 <h3>Joint Replacement Patients</h3>
                 <p>
                   Specialized mobility assistance and recovery-friendly stays.
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon">❤️</span>
+                <span class="icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
                 <h3>Cardiac Recovery</h3>
                 <p>
                   Heart-safe journeys planned with doctors and nursing support.
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon">🎗️</span>
+                <span class="icon"><i class="fa-solid fa-hands-holding-circle"></i></span>
                 <h3>Cancer Care Support</h3>
                 <p>
                   Comfort, coordination and gentle support for patients and
@@ -5140,40 +5149,40 @@
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon">🧠</span>
+                <span class="icon"><i class="fa-solid fa-brain"></i></span>
                 <h3>Neurological Rehabilitation</h3>
                 <p>
                   Careful recovery plans for brain, nerve and movement therapy.
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon">🏥</span>
+                <span class="icon"><i class="fa-solid fa-hospital"></i></span>
                 <h3>Orthopedic Rehabilitation</h3>
                 <p>
                   Expert therapy, walking assistance and adaptive transport.
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon">🌿</span>
+                <span class="icon"><i class="fa-solid fa-person-dress"></i></span>
                 <h3>Women Wellness Programs</h3>
                 <p>
                   Holistic programs for women’s health, recovery and serenity.
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon">💊</span>
+                <span class="icon"><i class="fa-solid fa-pills"></i></span>
                 <h3>Chronic Disease Management</h3>
                 <p>
                   Ongoing support for diabetes, wellness and long-term care.
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon">🌍</span>
+                <span class="icon"><i class="fa-solid fa-earth-americas"></i></span>
                 <h3>International Medical Travelers</h3>
                 <p>Clear guidance from visa to arrival to after-care.</p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon">👨‍👩‍👧</span>
+                <span class="icon"><i class="fa-solid fa-people-group"></i></span>
                 <h3>Family Care Assistance</h3>
                 <p>Rooming options and dedicated services for companions.</p>
               </article>
@@ -5191,7 +5200,7 @@
             </div>
             <div class="services-grid">
               <article class="service-card reveal">
-                <span class="icon">✈️</span>
+                <span class="icon"><i class="fa-solid fa-truck-plane"></i></span>
                 <h3>Airport Assistance</h3>
                 <p>
                   Fast track arrivals, medical escorts and comfortable
@@ -5199,73 +5208,73 @@
                 </p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🛂</span>
+                <span class="icon"><i class="fa-brands fa-cc-visa"></i></span>
                 <h3>Medical Visa Support</h3>
                 <p>
                   Visa guidance and documentation for international patients.
                 </p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🏨</span>
+                <span class="icon"><i class="fa-solid fa-hospital-user"></i></span>
                 <h3>Hospital Coordination</h3>
                 <p>
                   Partnered hospitals with trusted admission and care teams.
                 </p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">📅</span>
+                <span class="icon"><i class="fa-solid fa-calendar-check"></i></span>
                 <h3>Doctor Appointments</h3>
                 <p>Appointments booked with specialists, on your schedule.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🩹</span>
+                <span class="icon"><i class="fa-solid fa-user-nurse"></i></span>
                 <h3>Nursing Care</h3>
                 <p>
                   Qualified nurses for post-operative monitoring and assistance.
                 </p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🤝</span>
+                <span class="icon"><i class="fa-solid fa-hand-holding-hand"></i></span>
                 <h3>Personal Attendants</h3>
                 <p>Companion support for daily needs and comfort.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🦽</span>
+                <span class="icon"><i class="fa-solid fa-wheelchair"></i></span>
                 <h3>Wheelchair Assistance</h3>
                 <p>Mobility support at airports, hospitals and resorts.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🧘</span>
+                <span class="icon"><i class="fa-solid fa-spa"></i></span>
                 <h3>Rehabilitation Planning</h3>
                 <p>Recovery plans with physiotherapy and supportive care.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🌿</span>
+                <span class="icon"><i class="fa-solid fa-hotel"></i></span>
                 <h3>Wellness Resorts</h3>
                 <p>Quiet healing stays in peaceful, premium resorts.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🧘‍♀️</span>
+                <span class="icon"><i class="fa-solid fa-child-reaching"></i></span>
                 <h3>Ayurveda & Yoga Recovery</h3>
                 <p>Holistic recovery rituals rooted in Indian wellness.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🥗</span>
+                <span class="icon"><i class="fa-solid fa-plate-wheat"></i></span>
                 <h3>Diet Consultation</h3>
                 <p>Nutritional support for better recovery and energy.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">💊</span>
+                <span class="icon"><i class="fa-solid fa-hand-holding-medical"></i></span>
                 <h3>Medicine Management</h3>
                 <p>Medication reminders and pharmacy delivery support.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🚑</span>
+                <span class="icon"><i class="fa-solid fa-truck-medical"></i></span>
                 <h3>Emergency Support</h3>
                 <p>Prepared, reliable emergency care when it matters most.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🏠</span>
+                <span class="icon"><i class="fa-solid fa-house-chimney-user"></i></span>
                 <h3>Accommodation Booking</h3>
                 <p>
                   Recovery-friendly stays close to hospitals and wellness
@@ -5273,24 +5282,24 @@
                 </p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🚗</span>
+                <span class="icon"><i class="fa-solid fa-taxi"></i></span>
                 <h3>Transportation</h3>
                 <p>Comfortable transfers with health-conscious vehicles.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🗣️</span>
+                <span class="icon"><i class="fa-solid fa-language"></i></span>
                 <h3>Interpreter Services</h3>
                 <p>
                   Language support for smooth appointments and conversations.
                 </p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">📄</span>
+                <span class="icon"><i class="fa-solid fa-file-contract"></i></span>
                 <h3>Medical Documentation</h3>
                 <p>Complete record-keeping for treatment and travel needs.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon">🛡️</span>
+                <span class="icon"><i class="fa-solid fa-hands-holding"></i></span>
                 <h3>Insurance Coordination</h3>
                 <p>Assistance working with insurers for peace of mind.</p>
               </article>
@@ -5451,7 +5460,7 @@
               </article>
               <article class="testimonial-card reveal">
                 <img
-                  src="assets/images/traveler-3.jpg"
+                  src="assets/images/traveler-2.png"
                   alt="Patient from Australia"
                   loading="lazy"
                 />
@@ -5466,7 +5475,7 @@
               </article>
               <article class="testimonial-card reveal">
                 <img
-                  src="assets/images/traveler-2.png"
+                  src="assets/images/traveler-3.jpg"
                   alt="Patient from USA"
                   loading="lazy"
                 />
