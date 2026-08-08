@@ -1270,11 +1270,8 @@
 
         font-size: 12px;
 
-
         overflow: hidden;
       }
-
-      
 
       .wellness-about {
         padding-top: 12px;
@@ -3354,12 +3351,12 @@
         align-items: center;
         justify-content: flex-start;
       }
-      .mayapur-actions .btn {
+      /* .mayapur-actions .btn {
         min-width: 180px;
         padding: 0.95em 1.6em;
         flex: 0 1 auto;
-      }
-      .mayapur-actions .link-arrow {
+      } */
+      /* .mayapur-actions .link-arrow {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -3371,7 +3368,40 @@
         transition:
           color 0.22s ease,
           transform 0.22s ease;
+      } */
+
+      /* .mayapur-actions .link-arrow {
+        display: inline-flex;
+        background-color: rgb(228, 116, 91);
+        color: rgb(255, 255, 255);
+        border-radius: 999px;
+        width: 100%;
+        justify-content: center;
+        line-height: normal;
+        height: auto;
+        min-height: 52.075px;
+        flex: 1 1 100%;
+        align-self: center;
+      } */
+
+      .mayapur-actions .link-arrow {
+        width: max-content;
+        flex-basis: auto;
+        flex-grow: 0;
       }
+
+      .mayapur-actions {
+        align-items: center;
+        gap: 20px;
+        flex-wrap: nowrap;
+      }
+
+      .link-arrow svg {
+        width: 1.2em;
+        height: 1.2em;
+        flex-shrink: 0;
+      }
+
       .mayapur-actions .link-arrow:hover {
         color: var(--coral);
         transform: translateX(2px);
@@ -3555,11 +3585,19 @@
           gap: 12px;
           justify-content: flex-start;
         }
-        .mayapur-actions .btn {
+        /* .mayapur-actions .btn {
           width: 100%;
           min-width: 0;
           flex: 1 1 100%;
           padding: 0.95em 1.2em;
+        } */
+        .mayapur-actions .btn {
+          flex-basis: auto;
+          width: auto;
+        }
+
+        .mayapur-actions {
+          flex-wrap: nowrap;
         }
         .mayapur-actions .link-arrow {
           width: auto;
@@ -5043,14 +5081,30 @@
               </div>
             </div>
             <div class="trust-grid">
-              <div class="trust-card"><p class="trust-card-tex">/7 Medical Assistance</p></div>
-              <div class="trust-card"><p class="trust-card-tex">Verified Hospitals</p></div>
-              <div class="trust-card"><p class="trust-card-tex">Dedicated Coordinator</p></div>
-              <div class="trust-card"><p class="trust-card-tex">International Standards</p></div>
-              <div class="trust-card"><p class="trust-card-tex">Multilingual Support</p></div>
-              <div class="trust-card"><p class="trust-card-tex">Airport Pickup</p></div>
-              <div class="trust-card"><p class="trust-card-tex">Medical Visa Guidance</p></div>
-              <div class="trust-card"><p class="trust-card-tex">Insurance Assistance</p></div>
+              <div class="trust-card">
+                <p class="trust-card-tex">/7 Medical Assistance</p>
+              </div>
+              <div class="trust-card">
+                <p class="trust-card-tex">Verified Hospitals</p>
+              </div>
+              <div class="trust-card">
+                <p class="trust-card-tex">Dedicated Coordinator</p>
+              </div>
+              <div class="trust-card">
+                <p class="trust-card-tex">International Standards</p>
+              </div>
+              <div class="trust-card">
+                <p class="trust-card-tex">Multilingual Support</p>
+              </div>
+              <div class="trust-card">
+                <p class="trust-card-tex">Airport Pickup</p>
+              </div>
+              <div class="trust-card">
+                <p class="trust-card-tex">Medical Visa Guidance</p>
+              </div>
+              <div class="trust-card">
+                <p class="trust-card-tex">Insurance Assistance</p>
+              </div>
             </div>
           </div>
         </section>
@@ -5113,14 +5167,18 @@
             </div>
             <div class="help-grid">
               <article class="icon-card reveal">
-                <span class="icon"><i class="fa-solid fa-person-cane"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-person-cane"></i
+                ></span>
                 <h3>Senior Citizens</h3>
                 <p>
                   Safe, comfortable journeys for mature travelers and families.
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon"><i class="fa-solid fa-stethoscope"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-stethoscope"></i
+                ></span>
                 <h3>Post Operative Recovery</h3>
                 <p>
                   Restorative care with therapy, meals and daily monitoring.
@@ -5134,14 +5192,18 @@
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-hand-holding-heart"></i
+                ></span>
                 <h3>Cardiac Recovery</h3>
                 <p>
                   Heart-safe journeys planned with doctors and nursing support.
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon"><i class="fa-solid fa-hands-holding-circle"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-hands-holding-circle"></i
+                ></span>
                 <h3>Cancer Care Support</h3>
                 <p>
                   Comfort, coordination and gentle support for patients and
@@ -5163,7 +5225,9 @@
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon"><i class="fa-solid fa-person-dress"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-person-dress"></i
+                ></span>
                 <h3>Women Wellness Programs</h3>
                 <p>
                   Holistic programs for women’s health, recovery and serenity.
@@ -5177,12 +5241,16 @@
                 </p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon"><i class="fa-solid fa-earth-americas"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-earth-americas"></i
+                ></span>
                 <h3>International Medical Travelers</h3>
                 <p>Clear guidance from visa to arrival to after-care.</p>
               </article>
               <article class="icon-card reveal">
-                <span class="icon"><i class="fa-solid fa-people-group"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-people-group"></i
+                ></span>
                 <h3>Family Care Assistance</h3>
                 <p>Rooming options and dedicated services for companions.</p>
               </article>
@@ -5200,7 +5268,9 @@
             </div>
             <div class="services-grid">
               <article class="service-card reveal">
-                <span class="icon"><i class="fa-solid fa-truck-plane"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-truck-plane"></i
+                ></span>
                 <h3>Airport Assistance</h3>
                 <p>
                   Fast track arrivals, medical escorts and comfortable
@@ -5215,14 +5285,18 @@
                 </p>
               </article>
               <article class="service-card reveal">
-                <span class="icon"><i class="fa-solid fa-hospital-user"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-hospital-user"></i
+                ></span>
                 <h3>Hospital Coordination</h3>
                 <p>
                   Partnered hospitals with trusted admission and care teams.
                 </p>
               </article>
               <article class="service-card reveal">
-                <span class="icon"><i class="fa-solid fa-calendar-check"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-calendar-check"></i
+                ></span>
                 <h3>Doctor Appointments</h3>
                 <p>Appointments booked with specialists, on your schedule.</p>
               </article>
@@ -5234,7 +5308,9 @@
                 </p>
               </article>
               <article class="service-card reveal">
-                <span class="icon"><i class="fa-solid fa-hand-holding-hand"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-hand-holding-hand"></i
+                ></span>
                 <h3>Personal Attendants</h3>
                 <p>Companion support for daily needs and comfort.</p>
               </article>
@@ -5254,27 +5330,37 @@
                 <p>Quiet healing stays in peaceful, premium resorts.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon"><i class="fa-solid fa-child-reaching"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-child-reaching"></i
+                ></span>
                 <h3>Ayurveda & Yoga Recovery</h3>
                 <p>Holistic recovery rituals rooted in Indian wellness.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon"><i class="fa-solid fa-plate-wheat"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-plate-wheat"></i
+                ></span>
                 <h3>Diet Consultation</h3>
                 <p>Nutritional support for better recovery and energy.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon"><i class="fa-solid fa-hand-holding-medical"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-hand-holding-medical"></i
+                ></span>
                 <h3>Medicine Management</h3>
                 <p>Medication reminders and pharmacy delivery support.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon"><i class="fa-solid fa-truck-medical"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-truck-medical"></i
+                ></span>
                 <h3>Emergency Support</h3>
                 <p>Prepared, reliable emergency care when it matters most.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon"><i class="fa-solid fa-house-chimney-user"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-house-chimney-user"></i
+                ></span>
                 <h3>Accommodation Booking</h3>
                 <p>
                   Recovery-friendly stays close to hospitals and wellness
@@ -5294,12 +5380,16 @@
                 </p>
               </article>
               <article class="service-card reveal">
-                <span class="icon"><i class="fa-solid fa-file-contract"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-file-contract"></i
+                ></span>
                 <h3>Medical Documentation</h3>
                 <p>Complete record-keeping for treatment and travel needs.</p>
               </article>
               <article class="service-card reveal">
-                <span class="icon"><i class="fa-solid fa-hands-holding"></i></span>
+                <span class="icon"
+                  ><i class="fa-solid fa-hands-holding"></i
+                ></span>
                 <h3>Insurance Coordination</h3>
                 <p>Assistance working with insurers for peace of mind.</p>
               </article>
